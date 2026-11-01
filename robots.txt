@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tsoulkanaki2001-max.github.io/preritgupta007-crypto.github.io/sitemap.xml
+Sitemap: https://athlomate.app/sitemap.xml
