@@ -1,0 +1,37 @@
+/* Legal pages (privacy). Text is copied from the app repo; this only styles it in the website look. */
+.legal-wrap { max-width: 820px; padding-top: 48px; padding-bottom: 80px; }
+.legal .draft {
+  margin: 0 0 20px; padding: 10px 16px; border-radius: 14px; font-weight: 600; font-size: 14px;
+  color: #fca5a5; border: 1px solid rgba(248, 113, 113, 0.45); background: rgba(248, 113, 113, 0.08);
+}
+.legal-doc {
+  background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 40px clamp(20px, 5vw, 48px); color: var(--text-2);
+}
+.legal-doc h1 {
+  font-size: clamp(32px, 5vw, 48px); line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 16px;
+  background: none; color: #fff; -webkit-background-clip: border-box; background-clip: border-box;
+}
+.legal-doc h2 { color: #fff; font-size: 21px; letter-spacing: -0.3px; margin: 40px 0 10px; }
+.legal-doc p, .legal-doc li { overflow-wrap: anywhere; }
+.legal-doc ul { padding-left: 20px; display: grid; gap: 8px; }
+.legal-doc strong { color: #fff; }
+.legal-doc a { color: #7aa5ff; text-decoration: underline; text-underline-offset: 3px; }
+.legal-doc table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; }
+.legal-doc th, .legal-doc td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); }
+.legal-doc th { color: var(--muted); font-weight: 600; }
+.legal-doc .review {
+  display: inline; font-size: 13px; padding: 1px 6px; border-radius: 6px;
+  color: #fcd34d; background: rgba(229, 168, 35, 0.12); border-bottom: 1px solid rgba(229, 168, 35, 0.6);
+}
+.legal-doc .updated { color: var(--muted); font-size: 14px; margin-top: 36px; }
+.legal footer { padding-top: 0; }
+.legal .nav-actions .btn { display: inline-flex; }
+@media (max-width: 640px) {
+  .legal-doc table, .legal-doc tbody, .legal-doc tr, .legal-doc th, .legal-doc td { display: block; }
+  .legal-doc tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .legal-doc th, .legal-doc td { border: 0; padding: 2px 0; }
+  .legal-doc tr:first-child { display: none; }
+  .legal-doc td:first-child { color: #fff; font-weight: 600; }
+  .legal .nav-actions .btn-light { display: none; }
+}

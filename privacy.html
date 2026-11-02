@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy · Athlomate</title>
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="canonical" href="https://athlomate.app/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://athlomate.app/privacy.html" />
+  <link rel="alternate" hreflang="el" href="https://athlomate.app/el/privacy.html" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="legal.css?v=11" />
+</head>
+<body class="legal">
+  <!-- Copied from the app repo (site/en/privacy.html, generated from site_src/en/privacy.html). Do not edit here; re-copy when the app text changes. -->
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand" aria-label="Athlomate"><img src="img/logo.png" alt="" width="34" height="34" /><span>ATHLOMATE</span></a>
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-sm" lang="el" hreflang="el" href="el/privacy.html">Ελληνικά</a>
+        <a class="btn btn-light btn-sm" href="index.html">Back to Athlomate</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap legal-wrap">
+    <p class="draft" role="note">DRAFT, not legal advice. These texts have not been reviewed by a lawyer yet.</p>
+    <article class="legal-doc">
+<h1>Privacy Policy</h1>
+<p>This policy explains what personal data Athlomate collects, why, who receives it and what your rights are. It follows the EU General Data Protection Regulation (GDPR).</p>
+
+<h2>1. Who is responsible</h2>
+<p>The controller is OPERATOR_NAME (an individual), OPERATOR_ADDRESS. Contact: <a href="mailto:SUPPORT_EMAIL">SUPPORT_EMAIL</a>.</p>
+
+<h2>2. What we collect</h2>
+<table>
+  <tr><th>Data</th><th>Why</th></tr>
+  <tr><td>Email address and password (the password is stored only in hashed form)</td><td>Create and secure your account, send account emails</td></tr>
+  <tr><td>Name, age, gender, city and an optional profile photo</td><td>Your profile, so others can recognise you and find games in your city</td></tr>
+  <tr><td>Sports, skill levels and interest levels</td><td>Matching you with games and players at a similar level</td></tr>
+  <tr><td>Games you create or join, join requests, places and times of games</td><td>Running the games feature</td></tr>
+  <tr><td>Messages (direct chats and game chats) and chat photos</td><td>Letting players talk to each other</td></tr>
+  <tr><td>Feedback after games (kudos)</td><td>Showing friendly feedback on profiles</td></tr>
+  <tr><td>Reports and blocks</td><td>Keeping the community safe</td></tr>
+  <tr><td>In-app notifications (for example a join request was accepted)</td><td>Telling you what happened</td></tr>
+  <tr><td>Your settings (hide age, hide from Discover, read receipts, approximate area, language)</td><td>Respecting your choices</td></tr>
+  <tr><td>Diagnostic error reports: a shortened error message, a technical stack trace, app version, phone operating system version, app language, and your account id if you are signed in</td><td>Finding and fixing bugs. They contain no names, messages, places or locations (we remove those before sending)</td></tr>
+  <tr><td>Approximate area, only if you turn it on</td><td>Showing you on the Discover map and a rounded "about X km away" (see section 4)</td></tr>
+</table>
+<p>Other users can see: your name, photo, city, sports and levels, and your age unless you hide it. If you turn off "Show me in Discover" you do not appear in the Discover list and map.</p>
+<p>We do <strong>not</strong> use advertising, tracking or analytics tools, and we do not sell your data. The diagnostic error reports above are used only to fix bugs, not to track you or to measure how you use the app.</p>
+
+<h2>3. Legal bases</h2>
+<ul>
+  <li><strong>Contract</strong> (Art. 6(1)(b) GDPR): account, profile, games, chats and notifications, which are needed to provide the app.</li>
+  <li><strong>Consent</strong> (Art. 6(1)(a)): the approximate area on the map. It is off by default and you can switch it off at any time.</li>
+  <li><strong>Legitimate interests</strong> (Art. 6(1)(f)): safety, reports, blocking, preventing abuse, keeping the service secure, and finding and fixing bugs (diagnostic error reports). <span class="review">[REVIEW: confirm this is the right legal basis for diagnostic error reports]</span></li>
+  <li><strong>Legal obligation</strong> (Art. 6(1)(c)): when the law requires us to keep or hand over data.</li>
+</ul>
+
+<h2>4. Location</h2>
+<ul>
+  <li>The app asks for location only while it is in use, with low accuracy, and never in the background.</li>
+  <li>When you pick your city, your device position is used once to suggest the nearest city. <strong>Only the city name is saved</strong>, not the position.</li>
+  <li>The approximate area is <strong>opt-in</strong> (off by default). Your device rounds the position to a grid of about 2 km and only the centre of that cell is sent and stored; the database rounds it again. We never store or send a precise position. Other users may see you on the map in that area and a rounded distance.</li>
+  <li>"My location" on a map only moves the map on your screen and stores nothing.</li>
+</ul>
+
+<h2>5. Photos</h2>
+<p>Profile photos are uploaded to our storage. Photos you send in chats are re-encoded on your device before upload (largest side 1600 px, JPEG) which removes hidden data such as EXIF and GPS location. Chat photos are kept in a private storage area and shown only to the people in that chat through short-lived links; the app does not keep them on your device's disk.</p>
+
+<h2>6. Who receives your data</h2>
+<ul>
+  <li><strong>Other users</strong>, as described in section 2.</li>
+  <li><strong>Supabase</strong> provides our database, sign-in, file storage and real-time messaging, and acts as our processor. Our project is hosted in London, so your data is <strong>stored in the UK (AWS region eu-west-2) under the EU adequacy decision for the UK</strong>. <span class="review">[REVIEW: before launch, re-check that the adequacy decision is still in force and sign/confirm Supabase's data processing agreement (DPA)]</span></li>
+  <li><strong>Mapbox</strong> provides the map pictures and address search (processor). When you view a map, your device requests map tiles from Mapbox, which therefore receives technical data such as your IP address and the map area you view. When you search for an address or move the pin when creating a game, the text you type or the pin position is sent to Mapbox. When a game is saved, one further lookup is sent to Mapbox to store a place name. Mapbox may process data outside the EU and UK, under safeguards such as standard contractual clauses. <span class="review">[REVIEW: confirm Mapbox's current DPA and transfer mechanism]</span> Map data is © Mapbox and © OpenStreetMap contributors. Court data comes from OpenStreetMap contributors (ODbL licence).</li>
+  <li><strong>Resend</strong> is the email service (processor) that sends report details to the operator: when someone reports a user, a message or a game, an email with the report, the names and ids involved and the reported text is sent to the operator through Resend so it can be reviewed. <span class="review">[REVIEW: confirm Resend's DPA and transfer mechanism]</span></li>
+  <li><strong>Email delivery</strong>: account emails (for example password reset and email confirmation) are sent through an email service. <span class="review">[REVIEW: name the email provider chosen in LA8]</span></li>
+  <li><strong>Push notifications</strong> are not active yet. If we add them, we will name the provider here before they are switched on. <span class="review">[REVIEW: update after LA10]</span></li>
+  <li><strong>Authorities</strong>, only where the law requires.</li>
+</ul>
+
+<h2>7. International transfers</h2>
+<p>Data is stored in the UK. Some processors (for example Supabase Inc. and Mapbox Inc.) are based in the United States or may process data there. Where this happens, we rely on the EU's standard contractual clauses or an adequacy mechanism such as the EU-US Data Privacy Framework. <span class="review">[REVIEW: verify per processor]</span></p>
+
+<h2>8. How long we keep data</h2>
+<p><span class="review">[REVIEW: proposed retention periods, please confirm each]</span></p>
+<ul>
+  <li>Account, profile, sports, games, messages, photos, feedback, blocks: kept <strong>until you delete your account</strong>, then deleted.</li>
+  <li>Reports about a user, a message or a game, including a copy of the reported name and message text: kept for moderation for <strong>12 months</strong>, then deleted, even if the account they concern (or the account that made the report) has been deleted in the meantime.</li>
+  <li>Diagnostic error reports: deleted automatically after <strong>30 days</strong>, or earlier when you delete your account.</li>
+  <li>In-app notifications: shown in the app for <strong>30 days</strong>. <span class="review">[REVIEW: confirm when the older rows are physically deleted]</span></li>
+  <li>Game chats: you can write in a game chat until 7 days after the game ends; the messages stay stored until they are deleted with the account or the game.</li>
+  <li>Backups: Supabase may keep encrypted backups for a limited time after deletion (usually up to 7 days on a paid plan). <span class="review">[REVIEW: confirm the plan and backup period]</span></li>
+  <li>Data we must keep by law is kept as long as the law requires.</li>
+</ul>
+
+<h2>9. Your rights</h2>
+<p>You have the right to access your data, correct it, have it deleted, restrict or object to its use, receive it in a portable form, and withdraw consent at any time (for example by switching off the approximate area). Most of this you can do directly in the app (Edit profile, Settings). To <strong>delete your account</strong> and all your data, use Settings, Delete account. For anything else write to <a href="mailto:SUPPORT_EMAIL">SUPPORT_EMAIL</a>; we answer within one month.</p>
+<p>You may also complain to the Hellenic Data Protection Authority (<a href="https://www.dpa.gr">www.dpa.gr</a>) or to the authority in your own country.</p>
+
+<h2>10. Age</h2>
+<p>Athlomate is for people aged 18 and over. We do not knowingly collect data from anyone younger. If you think someone under 18 uses the app, please tell us and we will remove the account.</p>
+
+<h2>11. Security</h2>
+<p>Data is sent over encrypted connections, access is restricted with database rules so that people only see what the app lets them see, and chat photos are private. No system is perfectly secure; if there is a breach that affects you, we will inform you and the authority as the law requires.</p>
+
+<h2>12. Changes</h2>
+<p>We may update this policy. The date below changes, and for important changes we will tell you in the app.</p>
+
+<p class="updated">Last updated: 2026-10-30</p>
+    </article>
+  </main>
+  <footer><div class="wrap"><div class="foot-bottom"><span>© 2026 Athlomate</span><a href="index.html">Back to Athlomate</a></div></div></footer>
+</body>
+</html>
