@@ -92,15 +92,26 @@ button { font: inherit; color: inherit; }
 }
 .hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
 .pill {
-  display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 12px; margin-bottom: 26px;
-  border: 1px solid var(--line-2); border-radius: 999px; background: rgba(255, 255, 255, 0.04);
-  font-size: 14px; font-weight: 600; color: var(--text-2); transition: background .2s ease;
+  display: inline-flex; align-items: center; gap: 10px; padding: 6px 8px 6px 6px; margin-bottom: 28px;
+  border: 1px solid var(--line-2); border-radius: 999px;
+  background: linear-gradient(90deg, rgba(13, 94, 175, 0.28), rgba(255, 255, 255, 0.04) 60%);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.06), 0 10px 30px rgba(13, 94, 175, 0.25);
+  font-size: 14px; font-weight: 700; color: #fff; transition: background .2s ease, transform .2s ease;
 }
-.pill:hover { background: rgba(255, 255, 255, 0.08); }
-.pill-arrow { color: var(--muted); transition: transform .2s ease; }
+.pill:hover { transform: translateY(-1px); }
+.pill-flag {
+  width: 30px; height: 30px; border-radius: 50%; overflow: hidden; flex: none; display: grid; place-items: center;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+.flag { width: 46px; height: 30px; max-width: none; }
+.pill-tag {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
+  background: rgba(16, 185, 129, 0.14); color: #6ee7b7; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+}
+.pill-arrow { color: var(--muted); padding-right: 6px; transition: transform .2s ease; }
 .pill:hover .pill-arrow { transform: translateX(3px); }
 h1 {
-  font-size: clamp(44px, 8.4vw, 104px); line-height: 0.98; margin: 0 0 24px; letter-spacing: -0.045em; font-weight: 800;
+  font-size: clamp(44px, 8.4vw, 104px); line-height: 1.02; margin: 0 0 14px; padding: 0 0.04em 0.14em; letter-spacing: -0.045em; font-weight: 800;
   background: linear-gradient(180deg, #fff 30%, #b8c4d9); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 h1 .accent {
@@ -349,6 +360,9 @@ footer { padding: 70px 0 32px; color: var(--muted); font-size: 14px; overflow: h
   .wrap { padding: 0 16px; }
   section { padding: 76px 0; }
   .hero { padding: 48px 0 24px; }
+  .pill { font-size: 13px; white-space: nowrap; gap: 8px; }
+  .pill-arrow { display: none; }
+  .pill-tag { padding: 3px 8px; font-size: 11px; }
   .hero-stage { margin-top: 40px; }
   .floating { display: none; }
   .nav-actions .btn { display: none; }
