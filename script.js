@@ -1,13 +1,24 @@
 (function () {
   var el = {
     skip: "Παράκαμψη στο περιεχόμενο",
-    navFeatures: "Λειτουργίες", navHow: "Πώς λειτουργεί", navFaq: "Ερωτήσεις", navCta: "Έρχεται σύντομα",
+    navGames: "Παιχνίδια", navFeatures: "Λειτουργίες", navHow: "Πώς λειτουργεί", navFaq: "Ερωτήσεις", navCta: "Έρχεται σύντομα",
     heroEyebrow: "Ξεκινάμε στην Ελλάδα",
     heroTitle1: "Βρες τον επόμενο", heroTitleAccent: "συμπαίκτη.", heroTitle2: "Κινηθείτε μαζί.",
     heroLead: "Το Athlomate σε συνδέει με άτομα που παίζουν το άθλημά σου, στην πόλη σου, στο επίπεδό σου. Οργάνωσε ή συμμετάσχε σε παιχνίδι μέσα σε λίγα λεπτά.",
     heroCta: "Έρχεται σύντομα", heroCta2: "Δες πώς λειτουργεί",
     heroNote: "Έρχεται σύντομα στο App Store και στο Google Play.",
     stat1: "αθλήματα στην έναρξη", stat2: "πλήρως δίγλωσσο", stat3v: "Δωρεάν", stat3: "η συμμετοχή",
+    sideA1: "Πάντελ · Σάββατο 11:00", sideA2: "Μεσαίο επίπεδο · 1 θέση",
+    sideB1: "Μπάσκετ · απόψε 20:30", sideB2: "Όλα τα επίπεδα · 3 θέσεις",
+    gamesEyebrow: "Παιχνίδια κοντά σου", gamesTitle: "Ο πιο γρήγορος δρόμος για το επόμενο παιχνίδι σου.",
+    gamesSub: "Κάποιος ψάχνει πάντα έναν παίκτη ακόμα. Άνοιξε την εφαρμογή, διάλεξε παιχνίδι, πάτα συμμετοχή.",
+    gamesNote: "Ενδεικτικά παιχνίδια.",
+    featEyebrow: "Λειτουργίες", howEyebrow: "Πώς λειτουργεί", comEyebrow: "Κοινότητα", faqEyebrow: "Ερωτήσεις",
+    c3t: "Σερί δραστηριότητας", c3b: "Σερί δραστηριότητας για να συνεχίζεις εβδομάδα με την εβδομάδα",
+    bub1: "Γήπεδο 2 στις 20:30;", bub2: "Τέλεια, τα λέμε εκεί 🙌",
+    recapSport: "Ποδόσφαιρο · χθες", recapTitle: "Πώς ήταν το παιχνίδι;", recapSub: "Δώσε thumbs-up στους παίκτες που σου άρεσαν.",
+    panelTitle: "Αυτή την εβδομάδα", panelStreak: "Σερί 4 εβδομάδων",
+    footProduct: "Προϊόν", footMade: "Φτιαγμένο για παίκτες στην Ελλάδα",
     float1: "3 κοινά αθλήματα", float2: "Παιχνίδι απόψε · 2 θέσεις",
     sFootball: "Ποδόσφαιρο", sBasketball: "Μπάσκετ", sTennis: "Τένις & Πάντελ", sVolleyball: "Βόλεϊ",
     sRunning: "Τρέξιμο", sSwimming: "Κολύμβηση", sCycling: "Ποδηλασία", sYoga: "Γιόγκα", sPilates: "Πιλάτες", sCalisthenics: "Καλισθενικά",
@@ -27,7 +38,7 @@
     comTitle: "Μια φιλική και ασφαλής κοινότητα", comSub: "Το Athlomate κρατά το βάρος στο να παίζουμε μαζί.",
     c1: "Εργαλεία αναφοράς και αποκλεισμού για σεβασμό στα παιχνίδια",
     c2: "Thumbs-up μετά το event για τους καλούς συμπαίκτες",
-    c3: "Σερί δραστηριότητας για να συνεχίζεις εβδομάδα με την εβδομάδα",
+    c3: "Κράτα τον ρυθμό σου εβδομάδα με την εβδομάδα.",
     c4: "Κάλεσε φίλους και φτιάξε τη δική σου παρέα",
     pRow1: "Σάββατο 11:00", pRow2: "Κυριακή 18:30", pRow3: "Τρίτη 21:00",
     ndTitle: "Όχι εφαρμογή γνωριμιών. Εφαρμογή αθλητισμού.",
@@ -51,7 +62,38 @@
     el: { title: "Athlomate – Βρες άτομα για το άθλημά σου, κοντά σου", desc: "Το Athlomate σε συνδέει με άτομα που παίζουν το άθλημά σου, στην πόλη σου, στο επίπεδό σου. Οργάνωσε ή συμμετάσχε σε παιχνίδι στην Ελλάδα." }
   };
 
+  // Example games for the ticker (illustration only)
+  var games = [
+    ["⚽", "Football", "Ποδόσφαιρο", "Tonight 20:30", "Απόψε 20:30", "Athens", "Αθήνα", 2],
+    ["🎾", "Padel", "Πάντελ", "Sat 11:00", "Σάβ 11:00", "Thessaloniki", "Θεσσαλονίκη", 1],
+    ["🏃", "Running", "Τρέξιμο", "Sun 09:00", "Κυρ 09:00", "Glyfada", "Γλυφάδα", 6],
+    ["🏀", "Basketball", "Μπάσκετ", "Tomorrow 19:00", "Αύριο 19:00", "Patras", "Πάτρα", 3],
+    ["🏐", "Volleyball", "Βόλεϊ", "Sat 17:30", "Σάβ 17:30", "Heraklion", "Ηράκλειο", 2],
+    ["🧘", "Yoga", "Γιόγκα", "Sun 08:00", "Κυρ 08:00", "Piraeus", "Πειραιάς", 4],
+    ["🎾", "Tennis", "Τένις", "Wed 18:00", "Τετ 18:00", "Larissa", "Λάρισα", 1],
+    ["🚴", "Cycling", "Ποδηλασία", "Sun 07:30", "Κυρ 07:30", "Volos", "Βόλος", 5],
+    ["💪", "Calisthenics", "Καλισθενικά", "Thu 19:30", "Πέμ 19:30", "Ioannina", "Ιωάννινα", 3],
+    ["🏊", "Swimming", "Κολύμβηση", "Fri 07:00", "Παρ 07:00", "Kalamata", "Καλαμάτα", 2]
+  ];
+  function spotsText(n, lang) {
+    if (lang === "el") return n === 1 ? "1 θέση" : n + " θέσεις";
+    return n === 1 ? "1 spot left" : n + " spots left";
+  }
+  function renderTicker(lang) {
+    var gr = lang === "el";
+    document.querySelectorAll(".ticker-row").forEach(function (row) {
+      var r = +row.dataset.row;
+      var list = games.filter(function (_, i) { return i % 2 === r; }).concat(games.filter(function (_, i) { return i % 2 !== r; }));
+      var html = list.map(function (g) {
+        return '<div class="game"><span class="g-emoji">' + g[0] + '</span><div><strong>' + (gr ? g[2] : g[1]) +
+          '</strong><small>' + (gr ? g[4] : g[3]) + ' · ' + (gr ? g[6] : g[5]) + '</small></div><span class="g-spots">' + spotsText(g[7], lang) + '</span></div>';
+      }).join("");
+      row.innerHTML = '<div class="ticker-track"><div class="ticker-set">' + html + '</div><div class="ticker-set">' + html + '</div></div>';
+    });
+  }
+
   function setLang(lang) {
+    renderTicker(lang);
     nodes.forEach(function (n) {
       var k = n.dataset.i18n;
       var v = lang === "el" ? el[k] : en[k];
@@ -73,5 +115,34 @@
   var saved = null;
   try { saved = localStorage.getItem("athlomate-lang"); } catch (e) {}
   var initial = saved || ((navigator.language || "").toLowerCase().indexOf("el") === 0 ? "el" : "en");
-  if (initial === "el") setLang("el");
+  if (initial === "el") setLang("el"); else renderTicker("en");
+
+  // How it works: step tabs with auto-advance
+  var steps = [].slice.call(document.querySelectorAll(".showcase .step"));
+  var frames = [].slice.call(document.querySelectorAll(".showcase .frame"));
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var current = 0, timer = null, DURATION = 5000;
+  function go(i, user) {
+    current = (i + steps.length) % steps.length;
+    steps.forEach(function (s, k) {
+      s.classList.toggle("active", k === current);
+      s.setAttribute("aria-selected", String(k === current));
+    });
+    frames.forEach(function (f, k) { f.classList.toggle("active", k === current); });
+    if (user) { clearInterval(timer); timer = null; document.querySelector(".showcase").classList.add("paused"); }
+  }
+  steps.forEach(function (s, k) { s.addEventListener("click", function () { go(k, true); }); });
+  if (steps.length && !reduce && "IntersectionObserver" in window) {
+    var showcase = document.querySelector(".showcase");
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !timer && !showcase.classList.contains("paused")) {
+          showcase.classList.add("running");
+          timer = setInterval(function () { go(current + 1); }, DURATION);
+        } else if (!e.isIntersecting && timer) {
+          clearInterval(timer); timer = null; showcase.classList.remove("running");
+        }
+      });
+    }, { threshold: 0.3 }).observe(showcase);
+  }
 })();
