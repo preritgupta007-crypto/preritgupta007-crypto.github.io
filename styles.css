@@ -164,32 +164,22 @@ section { padding: 110px 0; position: relative; }
 .sec-head h2 { font-size: clamp(32px, 5vw, 56px); line-height: 1.04; margin: 0 0 16px; letter-spacing: -0.035em; }
 .sec-head p { color: var(--muted); font-size: 18px; margin: 0; }
 
-.sports { border-block: 1px solid var(--line); padding: 22px 0; background: rgba(255, 255, 255, 0.015); }
-.sports .wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.sport {
-  display: inline-flex; gap: 8px; align-items: center; padding: 8px 18px; border: 1px solid var(--line);
-  border-radius: 999px; font-weight: 600; background: var(--ink-2); font-size: 15px; white-space: nowrap;
-}
 
-/* Games ticker */
+/* Example games */
 .games { padding-bottom: 70px; }
-.ticker {
-  display: grid; gap: 14px; overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-}
-.ticker-track { display: flex; width: max-content; }
-.ticker-set { display: flex; gap: 14px; padding-right: 14px; }
+.games-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .game {
-  display: flex; align-items: center; gap: 14px; padding: 14px 16px 14px 14px; min-width: 300px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px;
   background: var(--ink-2); border: 1px solid var(--line); border-radius: 18px;
 }
-.game strong { display: block; font-size: 15px; }
-.game small { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.game strong { display: block; font-size: 16px; }
+.game small { display: block; color: var(--muted); font-size: 13px; line-height: 1.4; }
 .g-spots {
-  margin-left: auto; font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap;
+  font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap;
   background: rgba(16, 185, 129, 0.12); border-radius: 999px; padding: 4px 10px;
 }
+@media (max-width: 1000px) { .games-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .games-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .game { padding: 14px; } }
 .ticker-note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 22px; opacity: .7; }
 
 /* Bento features */
@@ -282,20 +272,6 @@ section { padding: 110px 0; position: relative; }
 .thumb { margin-left: auto; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, 0.06); filter: grayscale(1); opacity: .6; }
 .thumb.on { background: rgba(16, 185, 129, 0.2); filter: none; opacity: 1; }
 
-/* Billboard */
-.billboard-sec { padding-block: 40px; }
-.billboard {
-  position: relative; overflow: hidden; text-align: center; border-radius: 36px; padding: 110px 32px;
-  background:
-    radial-gradient(700px 360px at 50% 120%, rgba(16, 185, 129, 0.25), transparent 70%),
-    radial-gradient(800px 400px at 50% -20%, rgba(37, 99, 235, 0.45), transparent 70%),
-    var(--ink-2);
-  border: 1px solid var(--line-2);
-}
-.bb-emojis { font-size: 30px; letter-spacing: 14px; margin-bottom: 26px; opacity: .9; }
-.billboard h2 { margin: 0 auto 18px; font-size: clamp(36px, 6.4vw, 80px); line-height: 1; letter-spacing: -0.045em; max-width: 900px; }
-.billboard p { margin: 0 auto; max-width: 640px; color: var(--text-2); font-size: 19px; }
-
 /* Community */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split ul { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 12px; }
@@ -377,9 +353,6 @@ footer { padding: 70px 0 32px; color: var(--muted); font-size: 14px; overflow: h
   .bento { grid-template-columns: 1fr; }
   .card.wide { grid-column: auto; grid-template-columns: 1fr; gap: 0; }
   .card-shot img { height: 220px; }
-  .game { min-width: 270px; }
-  .billboard { padding: 72px 20px; border-radius: 28px; }
-  .bb-emojis { font-size: 24px; letter-spacing: 8px; }
   .cta { padding: 64px 20px; border-radius: 28px; }
   .step { padding: 16px; }
 }

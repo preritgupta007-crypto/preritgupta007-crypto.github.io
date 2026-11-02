@@ -37,21 +37,7 @@
 .dot { animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, .6); } 70%, 100% { box-shadow: 0 0 0 9px rgba(16, 185, 129, 0); } }
 
-/* Sports marquee */
-.sports .wrap.marquee {
-  display: block; overflow: hidden; max-width: none; padding: 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-.track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
-.track:hover { animation-play-state: paused; }
-.track .set { display: flex; gap: 12px; padding-right: 12px; }
-@keyframes marquee { to { transform: translateX(-50%); } }
-
-/* Games ticker */
-.ticker-track { animation: marquee 48s linear infinite; }
-.ticker-row.reverse .ticker-track { animation-direction: reverse; animation-duration: 56s; }
-.ticker:hover .ticker-track { animation-play-state: paused; }
+/* Example games */
 .game { transition: border-color .2s ease, transform .2s ease; }
 .game:hover { border-color: rgba(37, 99, 235, .55); transform: translateY(-2px); }
 
@@ -82,7 +68,7 @@
 .faq details[open] summary::after { transform: rotate(180deg); }
 
 @media (prefers-reduced-motion: reduce) {
-  .orb, .floating, .side-card, .track, .ticker-track, .dot, .tick, .bar { animation: none !important; }
+  .orb, .floating, .side-card, .dot, .tick, .bar { animation: none !important; }
   .side-card.left { transform: rotate(-4deg); }
   .side-card.right { transform: rotate(3deg); }
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }

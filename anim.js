@@ -35,25 +35,9 @@
     });
   }
 
-  // Sports marquee; built before script.js runs so the clones are translated too
-  var wrap = document.querySelector(".sports .wrap");
-  if (wrap) {
-    var track = document.createElement("div");
-    track.className = "track";
-    var setA = document.createElement("div");
-    setA.className = "set";
-    [].slice.call(wrap.children).forEach(function (i) { setA.appendChild(i); });
-    var setB = setA.cloneNode(true);
-    setB.setAttribute("aria-hidden", "true");
-    track.appendChild(setA);
-    track.appendChild(setB);
-    wrap.appendChild(track);
-    wrap.classList.add("marquee");
-  }
-
   // Scroll reveal
   if ("IntersectionObserver" in window) {
-    var sel = ".hero-inner > *, .sec-head, .card, .showcase > *, .split > *, .billboard, .faq details, .cta, .ticker";
+    var sel = ".hero-inner > *, .sec-head, .card, .showcase > *, .split > *, .faq details, .cta, .game";
     var els = [].slice.call(document.querySelectorAll(sel));
     els.forEach(function (el) {
       var idx = [].indexOf.call(el.parentNode.children, el);

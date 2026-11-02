@@ -81,15 +81,12 @@
   }
   function renderTicker(lang) {
     var gr = lang === "el";
-    document.querySelectorAll(".ticker-row").forEach(function (row) {
-      var r = +row.dataset.row;
-      var list = games.filter(function (_, i) { return i % 2 === r; }).concat(games.filter(function (_, i) { return i % 2 !== r; }));
-      var html = list.map(function (g) {
-        return '<div class="game"><span class="g-emoji">' + g[0] + '</span><div><strong>' + (gr ? g[2] : g[1]) +
-          '</strong><small>' + (gr ? g[4] : g[3]) + ' · ' + (gr ? g[6] : g[5]) + '</small></div><span class="g-spots">' + spotsText(g[7], lang) + '</span></div>';
-      }).join("");
-      row.innerHTML = '<div class="ticker-track"><div class="ticker-set">' + html + '</div><div class="ticker-set">' + html + '</div></div>';
-    });
+    var grid = document.querySelector(".games-grid");
+    if (!grid) return;
+    grid.innerHTML = games.map(function (g) {
+      return '<div class="game"><span class="g-emoji">' + g[0] + '</span><div><strong>' + (gr ? g[2] : g[1]) +
+        '</strong><small>' + (gr ? g[4] : g[3]) + '<br>' + (gr ? g[6] : g[5]) + '</small></div><span class="g-spots">' + spotsText(g[7], lang) + '</span></div>';
+    }).join("");
   }
 
   function setLang(lang) {
