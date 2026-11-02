@@ -48,6 +48,7 @@ button { font: inherit; color: inherit; }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 1px; font-size: 17px; }
 .brand img { width: 34px; height: 34px; border-radius: 9px; }
+.brand img.wordmark { width: auto; height: 22px; border-radius: 0; }
 .nav-links {
   display: flex; align-items: center; gap: 4px; font-size: 14px; color: var(--text-2);
   background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); border-radius: 999px; padding: 4px;
@@ -337,11 +338,11 @@ footer { padding: 70px 0 32px; color: var(--muted); font-size: 14px; overflow: h
 .foot-col { display: flex; flex-direction: column; gap: 10px; min-width: 160px; }
 .foot-col strong { color: #fff; font-size: 14px; margin-bottom: 4px; }
 .foot-col a:hover { color: #fff; }
-.foot-word {
-  font-weight: 900; font-size: clamp(48px, 13.4vw, 168px); line-height: .8; letter-spacing: -0.05em; text-align: center;
-  margin: 60px 0 28px; user-select: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.01));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+.foot-word { margin: 60px 0 28px; user-select: none; }
+.foot-word img {
+  width: 100%; height: auto; opacity: .12;
+  -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 20%, transparent 100%);
 }
 .foot-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 24px; }
 
@@ -366,7 +367,7 @@ footer { padding: 70px 0 32px; color: var(--muted); font-size: 14px; overflow: h
   .hero-stage { margin-top: 40px; }
   .floating { display: none; }
   .nav-actions .btn { display: none; }
-  .brand span { font-size: 15px; }
+  .brand img.wordmark { height: 19px; }
   .hero-stats strong { font-size: 20px; }
   .hero-stats span { font-size: 12px; }
   .bento { grid-template-columns: 1fr; }
