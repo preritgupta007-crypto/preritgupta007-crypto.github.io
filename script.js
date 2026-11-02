@@ -145,7 +145,8 @@
 
   var saved = null;
   try { saved = localStorage.getItem("athlomate-lang"); } catch (e) {}
-  var initial = saved || ((navigator.language || "").toLowerCase().indexOf("el") === 0 ? "el" : "en");
+  // Greek by default; English only when the visitor picked it before.
+  var initial = saved === "en" ? "en" : "el";
   if (initial === "el") setLang("el"); else renderTicker("en");
 
   // How it works: step tabs with auto-advance
