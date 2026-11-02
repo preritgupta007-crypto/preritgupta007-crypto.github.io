@@ -136,7 +136,7 @@
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
-    try { localStorage.setItem("athlomate-lang", lang); } catch (e) {}
+    try { localStorage.setItem("athlomate-lang2", lang); } catch (e) {}
   }
 
   document.querySelectorAll(".lang button").forEach(function (b) {
@@ -144,7 +144,7 @@
   });
 
   var saved = null;
-  try { saved = localStorage.getItem("athlomate-lang"); } catch (e) {}
+  try { saved = localStorage.getItem("athlomate-lang2"); } catch (e) {}
   // Greek by default; English only when the visitor picked it before.
   var initial = saved === "en" ? "en" : "el";
   if (initial === "el") setLang("el"); else renderTicker("en");
