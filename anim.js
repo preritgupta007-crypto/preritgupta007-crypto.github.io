@@ -35,25 +35,9 @@
     });
   }
 
-  // Sports marquee; built before script.js runs so the clones are translated too
-  var wrap = document.querySelector(".sports .wrap");
-  if (wrap) {
-    var track = document.createElement("div");
-    track.className = "track";
-    var setA = document.createElement("div");
-    setA.className = "set";
-    [].slice.call(wrap.children).forEach(function (i) { setA.appendChild(i); });
-    var setB = setA.cloneNode(true);
-    setB.setAttribute("aria-hidden", "true");
-    track.appendChild(setA);
-    track.appendChild(setB);
-    wrap.appendChild(track);
-    wrap.classList.add("marquee");
-  }
-
   // Scroll reveal
   if ("IntersectionObserver" in window) {
-    var sel = ".hero .wrap > div:first-child > *, .sec-head, .card, .step, .split > *, .not-dating, .faq details, .cta";
+    var sel = ".hero-inner > *, .sec-head, .card, .showcase > *, .split > *, .faq details, .cta, .game";
     var els = [].slice.call(document.querySelectorAll(sel));
     els.forEach(function (el) {
       var idx = [].indexOf.call(el.parentNode.children, el);
@@ -119,14 +103,14 @@
     });
   });
 
-  // Tilt on the step screenshots only; the hero photo stays still
-  document.querySelectorAll(".step .shot img").forEach(function (img) {
-    img.addEventListener("mousemove", function (e) {
-      var r = img.getBoundingClientRect();
+  // Gentle tilt on the hero phone and the showcase phone
+  document.querySelectorAll(".hero-shot img, .showcase .phone").forEach(function (el) {
+    el.addEventListener("mousemove", function (e) {
+      var r = el.getBoundingClientRect();
       var x = (e.clientX - r.left) / r.width - 0.5;
       var y = (e.clientY - r.top) / r.height - 0.5;
-      img.style.transform = "perspective(900px) rotateY(" + x * 10 + "deg) rotateX(" + -y * 10 + "deg) scale(1.03)";
+      el.style.transform = "perspective(1000px) rotateY(" + x * 8 + "deg) rotateX(" + -y * 8 + "deg)";
     });
-    img.addEventListener("mouseleave", function () { img.style.transform = ""; });
+    el.addEventListener("mouseleave", function () { el.style.transform = ""; });
   });
 })();

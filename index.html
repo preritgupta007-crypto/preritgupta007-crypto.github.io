@@ -19,8 +19,8 @@
   <meta property="og:image" content="https://athlomate.app/img/logo.png" />
   <meta name="twitter:card" content="summary" />
 
-  <link rel="stylesheet" href="styles.css?v=8" />
-  <link rel="stylesheet" href="anim.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="anim.css?v=17" />
 
   <script type="application/ld+json">
   {
@@ -43,10 +43,11 @@
   <header class="nav">
     <div class="wrap">
       <a href="#top" class="brand" aria-label="Athlomate">
-        <img src="img/logo.png" alt="" width="36" height="36" style="width:36px;height:36px;border-radius:9px" />
-        <span>ATHLOMATE</span>
+        <img src="img/logo.png" alt="" width="34" height="34" />
+        <img class="wordmark" src="img/wordmark.svg" alt="athlomate" width="178" height="22" />
       </a>
       <nav class="nav-links" aria-label="Main">
+        <a href="#games" data-i18n="navGames">Games</a>
         <a href="#features" data-i18n="navFeatures">Features</a>
         <a href="#how" data-i18n="navHow">How it works</a>
         <a href="#faq" data-i18n="navFaq">FAQ</a>
@@ -56,7 +57,7 @@
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="el" aria-pressed="false">ΕΛ</button>
         </div>
-        <a class="btn btn-primary btn-sm" href="#download" data-i18n="navCta">Launching soon</a>
+        <a class="btn btn-light btn-sm" href="#download" data-i18n="navCta">Launching soon</a>
       </div>
     </div>
   </header>
@@ -64,79 +65,126 @@
   <main id="main">
     <!-- Hero -->
     <div class="hero" id="top">
-      <div class="wrap">
-        <div>
-          <span class="eyebrow" data-i18n="heroEyebrow">Launching in Greece</span>
-          <h1><span data-i18n="heroTitle1">Find your next</span> <span class="accent" data-i18n="heroTitleAccent">player.</span><br /><span data-i18n="heroTitle2">Move together.</span></h1>
-          <p class="lead" data-i18n="heroLead">Athlomate connects you with people who play your sport, in your city, at your skill level. Organize a game or join one in minutes.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#download" data-i18n="heroCta">Launching soon</a>
-            <a class="btn btn-ghost" href="#how" data-i18n="heroCta2">See how it works</a>
-          </div>
-          <p class="store-note" data-i18n="heroNote">Publishing soon on the App Store and Google Play.</p>
-          <div class="hero-stats">
-            <div><strong>11+</strong><span data-i18n="stat1">sports at launch</span></div>
-            <div><strong>EN · ΕΛ</strong><span data-i18n="stat2">fully bilingual</span></div>
-            <div><strong data-i18n="stat3v">Free</strong><span data-i18n="stat3">to join</span></div>
-          </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <a class="pill" href="#download"><span class="pill-flag"><svg class="flag" viewBox="0 0 27 18" aria-hidden="true"><rect width="27" height="18" fill="#0D5EAF"/><path d="M0 3h27M0 7h27M10 11h17M0 15h27" stroke="#fff" stroke-width="2"/><rect width="10" height="10" fill="#0D5EAF"/><path d="M0 5h10M5 0v10" stroke="#fff" stroke-width="2"/></svg></span><span data-i18n="heroEyebrow">Launching in Greece</span><span class="pill-tag"><span class="dot"></span><span data-i18n="pillTag">Soon</span></span><span class="pill-arrow" aria-hidden="true">→</span></a>
+        <h1><span data-i18n="heroTitle1">Find your next</span> <span class="accent" data-i18n="heroTitleAccent">player.</span><br /><span data-i18n="heroTitle2">Move together.</span></h1>
+        <p class="lead" data-i18n="heroLead">Athlomate connects you with people who play your sport, in your city, at your skill level. Organize a game or join one in minutes.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#download" data-i18n="heroCta">Launching soon</a>
+          <a class="btn btn-ghost" href="#how" data-i18n="heroCta2">See how it works</a>
         </div>
+        <p class="store-note" data-i18n="heroNote">Publishing soon on the App Store and Google Play.</p>
 
-        <div class="phone-wrap">
+        <div class="hero-stage">
+          <div class="side-card left" aria-hidden="true">
+            <span class="sc-emoji">🎾</span>
+            <div><strong data-i18n="sideA1">Padel · Saturday 11:00</strong><small data-i18n="sideA2">Intermediate · 1 spot left</small></div>
+          </div>
+          <div class="side-card right" aria-hidden="true">
+            <span class="sc-emoji">🏀</span>
+            <div><strong data-i18n="sideB1">Basketball · tonight 20:30</strong><small data-i18n="sideB2">All levels · 3 spots left</small></div>
+          </div>
           <div class="floating a" aria-hidden="true"><span class="dot"></span><span data-i18n="float1">3 shared sports</span></div>
           <div class="floating b" aria-hidden="true"><span class="dot"></span><span class="tick" id="tick">Football · tonight 20:30 · 2 spots left</span></div>
           <figure class="shot hero-shot">
-            <img src="img/welcome.jpg" alt="Athlomate welcome screen with beach volleyball players" width="735" height="1494" fetchpriority="high" />
+            <img src="img/welcome.jpg" alt="Athlomate welcome screen with a padel player" width="735" height="1598" fetchpriority="high" />
           </figure>
+        </div>
+
+        <div class="hero-stats">
+          <div><strong>11+</strong><span data-i18n="stat1">sports at launch</span></div>
+          <div><strong>EN · ΕΛ</strong><span data-i18n="stat2">fully bilingual</span></div>
+          <div><strong data-i18n="stat3v">Free</strong><span data-i18n="stat3">to join</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Sports strip -->
-    <div class="sports" aria-label="Sports">
+    <!-- Games ticker -->
+    <section id="games" class="games">
       <div class="wrap">
-        <span class="sport">⚽ <span data-i18n="sFootball">Football</span></span>
-        <span class="sport">🏀 <span data-i18n="sBasketball">Basketball</span></span>
-        <span class="sport">🎾 <span data-i18n="sTennis">Tennis &amp; Padel</span></span>
-        <span class="sport">🏐 <span data-i18n="sVolleyball">Volleyball</span></span>
-        <span class="sport">🏃 <span data-i18n="sRunning">Running</span></span>
-        <span class="sport">🏊 <span data-i18n="sSwimming">Swimming</span></span>
-        <span class="sport">🚴 <span data-i18n="sCycling">Cycling</span></span>
-        <span class="sport">🧘 <span data-i18n="sYoga">Yoga</span></span>
-        <span class="sport">🤸‍♀️ <span data-i18n="sPilates">Pilates</span></span>
-        <span class="sport">💪 <span data-i18n="sCalisthenics">Calisthenics</span></span>
+        <div class="sec-head center">
+          <span class="eyebrow" data-i18n="gamesEyebrow">Games near you</span>
+          <h2 data-i18n="gamesTitle">The fastest way to your next game.</h2>
+          <p data-i18n="gamesSub">Someone is always looking for one more player. Open the app, pick a game, tap join.</p>
+        </div>
       </div>
-    </div>
+      <div class="wrap">
+        <div class="games-grid" aria-hidden="true"></div>
+      </div>
+      <p class="wrap ticker-note" data-i18n="gamesNote">Example games, for illustration.</p>
+    </section>
 
-    <!-- Features -->
+    <!-- Features (bento) -->
     <section id="features">
       <div class="wrap">
         <div class="sec-head">
+          <span class="eyebrow" data-i18n="featEyebrow">Features</span>
           <h2 data-i18n="featTitle">Everything you need to get a game going</h2>
           <p data-i18n="featSub">Built around sports and skill level, not swiping.</p>
         </div>
-        <div class="grid-3">
-          <article class="card"><div class="icon">🎯</div><h3 data-i18n="f1t">Sport and skill profile</h3><p data-i18n="f1d">Pick the sports you play and set your skill level, so you meet people who match your pace.</p></article>
-          <article class="card"><div class="icon">🔎</div><h3 data-i18n="f2t">Discover players</h3><p data-i18n="f2d">Browse players in your city who share your sports. Filter by sport and see what you have in common.</p></article>
-          <article class="card"><div class="icon">🤝</div><h3 data-i18n="f3t">Smart match</h3><p data-i18n="f3d">Suggestions are weighted by skill level, so the people you see are a real fit for your game.</p></article>
-          <article class="card"><div class="icon">📅</div><h3 data-i18n="f4t">Create and join events</h3><p data-i18n="f4d">Set a sport, time and place with open spots. Others request to join and you accept.</p></article>
-          <article class="card"><div class="icon">💬</div><h3 data-i18n="f5t">Direct messaging</h3><p data-i18n="f5d">Chat with players to agree the details before you meet.</p></article>
-          <article class="card"><div class="icon">🗺️</div><h3 data-i18n="f6t">Venue map</h3><p data-i18n="f6d">See courts and venues for your sport on an interactive map.</p></article>
+        <div class="bento">
+          <article class="card wide">
+            <div class="card-text"><div class="icon">🔎</div><h3 data-i18n="f2t">Discover players</h3><p data-i18n="f2d">Browse players in your city who share your sports. Filter by sport and see what you have in common.</p></div>
+            <div class="card-shot"><img src="img/discover.jpg" alt="" width="735" height="1598" loading="lazy" /></div>
+          </article>
+          <article class="card"><div class="icon">🤝</div><h3 data-i18n="f3t">Smart match</h3><p data-i18n="f3d">Suggestions are weighted by skill level, so the people you see are a real fit for your game.</p>
+            <div class="skill-meter" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+          </article>
+          <article class="card"><div class="icon">🗺️</div><h3 data-i18n="f6t">Venue map</h3><p data-i18n="f6d">See courts and venues for your sport on an interactive map.</p>
+            <div class="mini-map" aria-hidden="true"><span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span></div>
+          </article>
+          <article class="card wide">
+            <div class="card-text"><div class="icon">📅</div><h3 data-i18n="f4t">Create and join events</h3><p data-i18n="f4d">Set a sport, time and place with open spots. Others request to join and you accept.</p></div>
+            <div class="card-shot"><img src="img/create-event.jpg" alt="" width="735" height="1598" loading="lazy" /></div>
+          </article>
+          <article class="card wide">
+            <div class="card-text"><div class="icon">💬</div><h3 data-i18n="f5t">Direct messaging</h3><p data-i18n="f5d">Chat with players to agree the details before you meet.</p>
+            <div class="bubbles" aria-hidden="true"><span class="b-in" data-i18n="bub1">Court 2 at 20:30?</span><span class="b-out" data-i18n="bub2">Perfect, see you there 🙌</span></div></div>
+            <div class="card-shot"><img src="img/messages.jpg" alt="" width="735" height="1598" loading="lazy" /></div>
+          </article>
+          <article class="card"><div class="icon">🔥</div><h3 data-i18n="c3t">Activity streaks</h3><p data-i18n="c3">Keep your rhythm week after week.</p>
+            <div class="streak-days" aria-hidden="true"><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span></span><span></span></div>
+          </article>
+          <article class="card wide full">
+            <div class="card-text"><div class="icon">🎯</div><h3 data-i18n="f1t">Sport and skill profile</h3><p data-i18n="f1d">Pick the sports you play and set your skill level, so you meet people who match your pace.</p></div>
+            <div class="card-shot two"><img src="img/profile.jpg" alt="" width="735" height="1598" loading="lazy" /><img src="img/profile-sports.jpg" alt="" width="735" height="1598" loading="lazy" /></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section id="how" style="background:var(--ink-2);border-block:1px solid var(--line)">
+    <!-- How it works (tabbed showcase) -->
+    <section id="how" class="how">
       <div class="wrap">
         <div class="sec-head">
+          <span class="eyebrow" data-i18n="howEyebrow">How it works</span>
           <h2 data-i18n="howTitle">From sign-up to kick-off</h2>
           <p data-i18n="howSub">Four simple steps.</p>
         </div>
-        <div class="steps">
-          <div class="step"><h3 data-i18n="h1t">Create your profile</h3><p data-i18n="h1d">Sign up, then pick your sports and set your skill level.</p><figure class="shot"><img src="img/profile.jpg" alt="Athlomate profile with sports and skill levels" width="735" height="1494" loading="lazy" /></figure></div>
-          <div class="step"><h3 data-i18n="h2t">Discover players</h3><p data-i18n="h2d">Browse people in your city who share your sports and level.</p><figure class="shot"><img src="img/discover.jpg" alt="Athlomate discover feed with players and their sports" width="735" height="1494" loading="lazy" /></figure></div>
-          <div class="step"><h3 data-i18n="h3t">Create or join a game</h3><p data-i18n="h3d">Choose a sport, a time and a place, or join a game that is already planned.</p><figure class="shot"><img src="img/create-event.jpg" alt="Athlomate create event screen" width="735" height="1472" loading="lazy" /></figure></div>
-          <div class="step"><h3 data-i18n="h4t">Play, then recap</h3><p data-i18n="h4d">After the game, give a quick thumbs-up to the players you enjoyed.</p></div>
+        <div class="showcase">
+          <div class="steps" role="tablist" aria-label="Steps">
+            <button class="step active" role="tab" aria-selected="true" data-step="0"><span class="num">01</span><span class="step-body"><strong data-i18n="h1t">Create your profile</strong><span data-i18n="h1d">Sign up, then pick your sports and set your skill level.</span></span><span class="bar"></span></button>
+            <button class="step" role="tab" aria-selected="false" data-step="1"><span class="num">02</span><span class="step-body"><strong data-i18n="h2t">Discover players</strong><span data-i18n="h2d">Browse people in your city who share your sports and level.</span></span><span class="bar"></span></button>
+            <button class="step" role="tab" aria-selected="false" data-step="2"><span class="num">03</span><span class="step-body"><strong data-i18n="h3t">Create or join a game</strong><span data-i18n="h3d">Choose a sport, a time and a place, or join a game that is already planned.</span></span><span class="bar"></span></button>
+            <button class="step" role="tab" aria-selected="false" data-step="3"><span class="num">04</span><span class="step-body"><strong data-i18n="h4t">Play, then recap</strong><span data-i18n="h4d">After the game, give a quick thumbs-up to the players you enjoyed.</span></span><span class="bar"></span></button>
+          </div>
+          <div class="screen">
+            <div class="phone">
+              <img class="frame active" src="img/profile.jpg" alt="Athlomate profile with sports and skill levels" width="735" height="1598" loading="lazy" />
+              <img class="frame" src="img/discover.jpg" alt="Athlomate discover feed with players and their sports" width="735" height="1598" loading="lazy" />
+              <img class="frame" src="img/create-event.jpg" alt="Athlomate create event screen" width="735" height="1598" loading="lazy" />
+              <div class="frame recap" aria-label="Game recap example">
+                <p class="recap-kicker">⚽ <span data-i18n="recapSport">Football · yesterday</span></p>
+                <h4 data-i18n="recapTitle">How was the game?</h4>
+                <p class="recap-sub" data-i18n="recapSub">Give a thumbs-up to the players you enjoyed.</p>
+                <div class="recap-row"><span class="av">N</span><span>Nikos</span><span class="thumb on">👍</span></div>
+                <div class="recap-row"><span class="av">M</span><span>Maria</span><span class="thumb on">👍</span></div>
+                <div class="recap-row"><span class="av">G</span><span>Giorgos</span><span class="thumb">👍</span></div>
+                <div class="recap-row"><span class="av">E</span><span>Eleni</span><span class="thumb on">👍</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -146,42 +194,54 @@
       <div class="wrap split">
         <div>
           <div class="sec-head" style="margin-bottom:0">
+            <span class="eyebrow" data-i18n="comEyebrow">Community</span>
             <h2 data-i18n="comTitle">A friendly, safe community</h2>
             <p data-i18n="comSub">Athlomate keeps the focus on playing together.</p>
           </div>
           <ul>
             <li data-i18n="c1">Report and block tools to keep games respectful</li>
             <li data-i18n="c2">Event recap thumbs-up to recognise great teammates</li>
-            <li data-i18n="c3">Activity streaks to keep you moving week after week</li>
+            <li data-i18n="c3b">Activity streaks to keep you moving week after week</li>
             <li data-i18n="c4">Invite friends and build your own squad</li>
           </ul>
         </div>
         <div class="panel" aria-hidden="true">
-          <div class="row"><span>🏀 Basketball</span><small data-i18n="pRow1">Saturday 11:00</small></div>
+          <p class="panel-title" data-i18n="panelTitle">This week</p>
+          <div class="row"><span>🏀 <span data-i18n="sBasketball">Basketball</span></span><small data-i18n="pRow1">Saturday 11:00</small></div>
           <div class="row"><span>🎾 Padel</span><small data-i18n="pRow2">Sunday 18:30</small></div>
-          <div class="row"><span>⚽ Football</span><small data-i18n="pRow3">Tuesday 21:00</small></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Not dating -->
-    <section style="padding-top:0">
-      <div class="wrap">
-        <div class="not-dating">
-          <h2 data-i18n="ndTitle">Not a dating app. A sports app.</h2>
-          <p data-i18n="ndText">No swiping, no matches. Athlomate is built around games: organize one, join one, and meet people through the sport you love.</p>
+          <div class="row"><span>⚽ <span data-i18n="sFootball">Football</span></span><small data-i18n="pRow3">Tuesday 21:00</small></div>
+          <div class="streak"><span>🔥</span><span data-i18n="panelStreak">4 week streak</span></div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="faq">
-      <div class="wrap" style="max-width:820px">
-        <div class="sec-head"><h2 data-i18n="faqTitle">Frequently asked questions</h2></div>
-        <details><summary><span data-i18n="q1">Is Athlomate free?</span></summary><p data-i18n="a1">You can sign up and start finding players and games for free.</p></details>
-        <details><summary><span data-i18n="q2">Where is it available?</span></summary><p data-i18n="a2">We are launching in Greece first, with the app available in English and Greek.</p></details>
-        <details><summary><span data-i18n="q3">Which sports are supported?</span></summary><p data-i18n="a3">We launch with the most popular sports in Greece, such as football, basketball, tennis and padel, volleyball, running, swimming, cycling, yoga, pilates and calisthenics.</p></details>
-        <details><summary><span data-i18n="q4">Do you share my exact location?</span></summary><p data-i18n="a4">No. Athlomate only uses your location once to suggest your city. Only the city you choose is saved to your profile.</p></details>
+      <div class="wrap faq-wrap">
+        <div class="sec-head"><span class="eyebrow" data-i18n="faqEyebrow">FAQ</span><h2 data-i18n="faqTitle">Frequently asked questions</h2></div>
+        <div class="faq-list">
+          <h3 class="faq-topic" data-i18n="faqTopicStart">Getting started</h3>
+          <details><summary><span data-i18n="faq1Q">What is Athlomate?</span></summary><p data-i18n="faq1A">Athlomate helps you find people to play your sport with: Athlomates near you, at a similar level. Join a game or create your own, then meet up and play.</p></details>
+          <details><summary><span data-i18n="faq2Q">How do skill levels work?</span></summary><p data-i18n="faq2A">For each sport you pick Beginner, Intermediate or Advanced. Athlomate uses it to suggest Athlomates at a similar level. After an event, other Athlomates can confirm your level. You can change it any time from your profile.</p></details>
+          <details><summary><span data-i18n="faq3Q">Who can use Athlomate?</span></summary><p data-i18n="faq3A">You must be 18 or older. Athlomate works everywhere in Greece: you choose your town or area, and you see players and games within the distance you pick.</p></details>
+          <h3 class="faq-topic" data-i18n="faqTopicEvents">Events</h3>
+          <details><summary><span data-i18n="faq4Q">How do I join an event?</span></summary><p data-i18n="faq4A">Open an event and tap "Request to join". The host approves or declines your request. If an event is full you can't request a spot. You can withdraw a request or leave an event any time from its page.</p></details>
+          <details><summary><span data-i18n="faq5Q">How do I create an event?</span></summary><p data-i18n="faq5A">On the Events tab tap "Create event". Choose the sport, an open game or a challenge, a title, when and where, how many Athlomates you need (not counting you) and the level. Afterwards you can invite Athlomates, and edit or cancel the event from its page.</p></details>
+          <details><summary><span data-i18n="faq6Q">What is "Play now"?</span></summary><p data-i18n="faq6A">If you host an event that starts within 24 hours and still has open spots, you can say you need Athlomates now. It then shows a "Play now" badge to Athlomates nearby who play that sport at a suitable level. It ends when the event starts, fills up, or you turn it off.</p></details>
+          <details><summary><span data-i18n="faq7Q">How do I invite friends?</span></summary><p data-i18n="faq7A">Tap the share icon on your Profile to send your invite link. You can also share an event from its page, or send one of your events as a card in a chat.</p></details>
+          <h3 class="faq-topic" data-i18n="faqTopicMessages">Messages and chat</h3>
+          <details><summary><span data-i18n="faq8Q">Who can message me?</span></summary><p data-i18n="faq8A">Only your connections. To message someone, send them a short message request; once they accept, you can chat. People in the same game can always talk in the game chat. Nobody can message you after a block, in either direction.</p></details>
+          <details><summary><span data-i18n="faq9Q">Can I send photos?</span></summary><p data-i18n="faq9A">Yes, in direct messages and in game chats. In a direct message you can't start a conversation with a photo: the other Athlomate has to write to you first. In a game chat, the host and the players can send photos any time the chat is open. Photos are resized and their location data is removed before they are sent.</p></details>
+          <h3 class="faq-topic" data-i18n="faqTopicPrivacy">Privacy and location</h3>
+          <details><summary><span data-i18n="faq10Q">Does Athlomate track my location?</span></summary><p data-i18n="faq10A">Only approximately, and only while the app is open, never in the background. When you choose your town, your phone can suggest the nearest one; only the town you pick is saved, never your position. If you choose to appear on the Discover map, your phone rounds your position to an area of about 2 km and only that area is stored. Turn it off in Settings and the stored area is deleted.</p></details>
+          <details><summary><span data-i18n="faq11Q">Who can see my profile and age?</span></summary><p data-i18n="faq11A">Other Athlomates see your name, photo, town, sports, levels and number of connections. In Settings → Privacy you can hide your age or hide yourself from Discover. Read receipts ("Seen") work both ways: if either of you turns them off, neither of you sees "Seen".</p></details>
+          <h3 class="faq-topic" data-i18n="faqTopicSafety">Safety and reporting</h3>
+          <details><summary><span data-i18n="faq12Q">How do I report or block someone?</span></summary><p data-i18n="faq12A">Open their profile and tap the "…" menu to report or block. You can also report a single chat message, a game or a message request. If you block someone, you no longer see each other in Discover or Messages, any request or connection between you is removed, and neither of you can message the other. Manage this in Settings → Blocked users.</p></details>
+          <details><summary><span data-i18n="faq13Q">How can I stay safe when meeting Athlomates?</span></summary><p data-i18n="faq13A">Meet in a public place, tell a friend where you are going, and trust your instincts. Athlomate doesn't handle payments or book courts. If someone makes you uncomfortable, report or block them.</p></details>
+          <details><summary><span data-i18n="faqConnectQ">Why do I need to connect before messaging?</span></summary><p data-i18n="faqConnectA">To keep unwanted messages away, you send a short request first. Once the other person accepts, you're connected and can chat. A request that isn't answered expires after 30 days. Game chats work as before, and you can always report or block someone.</p></details>
+          <h3 class="faq-topic" data-i18n="faqTopicAccount">Account</h3>
+          <details><summary><span data-i18n="faq14Q">How do I delete my account?</span></summary><p data-i18n="faq14A">Go to Settings → Delete account and confirm twice. Your profile, sports, connections, events you host, joined events and messages are permanently deleted. This can't be undone.</p></details>
+        </div>
       </div>
     </section>
 
@@ -189,9 +249,11 @@
     <section id="download" style="padding-top:20px">
       <div class="wrap">
         <div class="cta">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <img src="img/logo.png" alt="" width="64" height="64" class="cta-logo" />
           <h2 data-i18n="ctaTitle">Launching soon</h2>
           <p data-i18n="ctaText">We're getting Athlomate ready for iOS and Android. Publishing very soon.</p>
-          <a class="btn btn-primary" href="#top" data-i18n="ctaBtn">Back to top</a>
+          <a class="btn btn-light" href="#top" data-i18n="ctaBtn">Back to top</a>
         </div>
       </div>
     </section>
@@ -199,13 +261,29 @@
 
   <footer>
     <div class="wrap">
-      <span class="brand"><img src="img/logo.png" alt="" width="30" height="30" style="width:30px;height:30px;border-radius:8px" /> ATHLOMATE</span>
-      <span data-i18n="footTag">Find people to play your sport, near you.</span>
-      <span>© 2026 Athlomate</span>
+      <div class="foot-top">
+        <div class="foot-brand">
+          <span class="brand"><img src="img/logo.png" alt="" width="30" height="30" /><img class="wordmark" src="img/wordmark.svg" alt="athlomate" width="178" height="22" /></span>
+          <p data-i18n="footTag">Find people to play your sport, near you.</p>
+        </div>
+        <nav class="foot-col" aria-label="Footer">
+          <strong data-i18n="footProduct">Product</strong>
+          <a href="#games" data-i18n="navGames">Games</a>
+          <a href="#features" data-i18n="navFeatures">Features</a>
+          <a href="#how" data-i18n="navHow">How it works</a>
+          <a href="#faq" data-i18n="navFaq">FAQ</a>
+        </nav>
+        <nav class="foot-col" aria-label="Legal">
+          <strong data-i18n="footLegal">Legal</strong>
+          <a href="privacy.html" data-href-el="el/privacy.html" data-i18n="footPrivacy">Privacy Policy</a>
+        </nav>
+      </div>
+      <div class="foot-word" aria-hidden="true"><img src="img/wordmark.svg" alt="" /></div>
+      <div class="foot-bottom"><span>© 2026 Athlomate</span><span data-i18n="footMade">Made for players in Greece</span></div>
     </div>
   </footer>
 
-  <script src="anim.js?v=8"></script>
-  <script src="script.js?v=8"></script>
+  <script src="anim.js?v=17"></script>
+  <script src="script.js?v=17"></script>
 </body>
 </html>
