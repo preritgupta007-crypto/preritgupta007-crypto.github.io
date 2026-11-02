@@ -204,6 +204,9 @@ section { padding: 110px 0; position: relative; }
 .card:hover { transform: translateY(-4px); border-color: rgba(37, 99, 235, 0.5); }
 .card.wide { grid-column: span 2; display: grid; grid-template-columns: 1fr 0.8fr; gap: 24px; padding-bottom: 0; min-height: 340px; }
 .card.wide .card-text { padding-bottom: 30px; }
+.card.full { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; }
+.card-shot.two { gap: 18px; }
+.card-shot.two img { width: 46%; }
 .card-shot { align-self: end; display: flex; justify-content: center; }
 .card-shot img {
   width: 82%; max-width: 250px; height: 280px; object-fit: cover; object-position: top;
