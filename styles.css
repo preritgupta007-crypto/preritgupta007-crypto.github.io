@@ -383,3 +383,8 @@ footer { padding: 70px 0 32px; color: var(--muted); font-size: 14px; overflow: h
   html { scroll-behavior: auto; }
   .btn, .card, .frame, .step, .card-shot img { transition: none; }
 }
+.foot-brand .social {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 8px 14px;
+  border-radius: 999px; border: 1px solid var(--line); color: var(--text-2); font-size: 14px; font-weight: 600;
+}
+.foot-brand .social:hover { color: #fff; border-color: rgba(122, 165, 255, 0.6); }
