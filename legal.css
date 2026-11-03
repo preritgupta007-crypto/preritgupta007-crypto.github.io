@@ -35,3 +35,9 @@
   .legal-doc td:first-child { color: #fff; font-weight: 600; }
   .legal .nav-actions .btn-light { display: none; }
 }
+.legal-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.legal-nav a {
+  padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+  color: var(--text-2); border: 1px solid var(--line); background: var(--ink-2);
+}
+.legal-nav a[aria-current="page"] { color: #fff; border-color: rgba(122, 165, 255, 0.6); background: rgba(37, 99, 235, 0.18); }
