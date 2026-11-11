@@ -18,7 +18,7 @@
     bub1: "Γήπεδο 2 στις 20:30;", bub2: "Τέλεια, τα λέμε εκεί 🙌",
     recapSport: "Ποδόσφαιρο · χθες", recapTitle: "Πώς ήταν το παιχνίδι;", recapSub: "Δώσε thumbs-up στους παίκτες που σου άρεσαν.",
     panelTitle: "Αυτή την εβδομάδα", panelStreak: "Σερί 4 εβδομάδων",
-    footProduct: "Προϊόν", footLegal: "Νομικά", footPrivacy: "Πολιτική Απορρήτου", footTerms: "Όροι Χρήσης", footImpressum: "Στοιχεία και επικοινωνία", footMade: "Φτιαγμένο για παίκτες στην Ελλάδα",
+    footProduct: "Προϊόν", footLegal: "Νομικά", footPrivacy: "Πολιτική απορρήτου", footTerms: "Όροι χρήσης", footImpressum: "Impressum", footMade: "Φτιαγμένο για παίκτες στην Ελλάδα",
     float1: "3 κοινά αθλήματα", float2: "Παιχνίδι απόψε · 2 θέσεις",
     sFootball: "Ποδόσφαιρο", sBasketball: "Μπάσκετ", sTennis: "Τένις & Πάντελ", sVolleyball: "Βόλεϊ",
     sRunning: "Τρέξιμο", sHiking: "Πεζοπορία", sCycling: "Ποδηλασία", sYoga: "Γιόγκα", sPilates: "Πιλάτες", sCalisthenics: "Καλισθενικά",
