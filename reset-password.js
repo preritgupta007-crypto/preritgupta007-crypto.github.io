@@ -11,8 +11,8 @@
 
 /* Public values only: the project URL and the public anon / publishable key.
    NEVER put a service_role or secret key here. */
-var ATHLOMATE_SUPABASE_URL = 'https://FILL-IN-PROJECT-REF.supabase.co';
-var ATHLOMATE_SUPABASE_ANON_KEY = 'FILL-IN-PUBLIC-ANON-KEY';
+var ATHLOMATE_SUPABASE_URL = 'https://qqrtugwshmfmgdshkfoy.supabase.co';
+var ATHLOMATE_SUPABASE_ANON_KEY = 'sb_publishable_phZZkeQjoop-3R2rKCYV3A_hiJIOqsH';
 
 (function () {
   'use strict';
