@@ -1,0 +1,14 @@
+# Cloudflare Pages response headers.
+# Password reset page (LA9a): never indexed, never cached, no referrer, only our own scripts,
+# network calls only to Supabase. Both paths, because Pages also serves the page without ".html".
+/reset-password.html
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer
+  Cache-Control: no-store
+  Content-Security-Policy: default-src 'self'; script-src 'self'; connect-src https://*.supabase.co; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'
+
+/reset-password
+  X-Robots-Tag: noindex, nofollow
+  Referrer-Policy: no-referrer
+  Cache-Control: no-store
+  Content-Security-Policy: default-src 'self'; script-src 'self'; connect-src https://*.supabase.co; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'
