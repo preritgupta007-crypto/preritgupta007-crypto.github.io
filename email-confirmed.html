@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Το email επιβεβαιώθηκε · Email confirmed · Athlomate</title>
+  <meta name="description" content="Το email σας επιβεβαιώθηκε. Επιστρέψτε στην εφαρμογή Athlomate και συνδεθείτε. Your email is confirmed. Go back to the Athlomate app and sign in." />
+  <!-- Landing page for the sign-up confirmation link (app: kEmailConfirmedUrl, LA8). Not for search results. -->
+  <meta name="robots" content="noindex" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="canonical" href="https://athlomate.app/email-confirmed.html" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+  <link rel="stylesheet" href="styles.css?v=24" />
+  <script>
+    // Supabase sends people here with the session or an error in the URL fragment
+    // (#access_token=... or #error=...&error_code=otp_expired). Nothing is sent anywhere:
+    // we only check whether it was an error, then remove the fragment from the address bar
+    // so the token does not linger in history or get copied when the link is shared.
+    (function () {
+      var hash = window.location.hash || '';
+      var query = window.location.search || '';
+      var failed = /(^|[#&?])error(_code)?=/.test(hash) || /(^|[?&])error(_code)?=/.test(query);
+      if (failed) document.documentElement.classList.add('link-failed');
+      if (hash || query) {
+        try { history.replaceState(null, '', window.location.pathname); } catch (e) {}
+      }
+    })();
+  </script>
+  <style>
+    .confirm-page { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+    .confirm-main {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      padding: 32px 16px calc(40px + env(safe-area-inset-bottom));
+    }
+    .confirm-card {
+      width: 100%; max-width: 480px; text-align: center;
+      background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 36px clamp(20px, 6vw, 40px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+    .confirm-icon {
+      width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.45); color: var(--green);
+    }
+    .confirm-icon.warn { background: rgba(229, 168, 35, 0.12); border-color: rgba(229, 168, 35, 0.5); color: #fcd34d; }
+    .confirm-icon svg { width: 36px; height: 36px; }
+    .confirm-block { padding: 0; }
+    .confirm-block h1 {
+      background: none; color: #fff; -webkit-background-clip: border-box; background-clip: border-box;
+      font-size: clamp(24px, 6.5vw, 30px); line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 10px; }
+    .confirm-block p { margin: 0; color: var(--text-2); font-size: 16px; }
+    .confirm-block p + p { margin-top: 8px; }
+    .confirm-block strong { color: #fff; }
+    .confirm-sep { height: 1px; background: var(--line); margin: 26px 0; border: 0; }
+    .confirm-block.secondary h2 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; color: #fff; }
+    .confirm-block.secondary p { font-size: 15px; color: var(--muted); }
+    .confirm-help { margin-top: 26px; font-size: 14px; color: var(--muted); }
+    .confirm-help a { color: #7aa5ff; text-decoration: underline; text-underline-offset: 3px; }
+    .failed-only { display: none; }
+    .link-failed .ok-only { display: none; }
+    .link-failed .failed-only { display: block; }
+    .confirm-page footer { padding: 0 0 calc(24px + env(safe-area-inset-bottom)); }
+    .confirm-page .foot-bottom { font-size: 14px; color: var(--muted); justify-content: center; }
+  </style>
+</head>
+<body class="confirm-page">
+  <header class="nav">
+    <div class="wrap">
+      <a href="/" class="brand" aria-label="Athlomate"><img src="img/logo.png" alt="" width="34" height="34" /><img class="wordmark" src="img/wordmark.svg" alt="athlomate" width="178" height="22" /></a>
+    </div>
+  </header>
+
+  <main class="confirm-main">
+    <div class="confirm-card">
+      <!-- Success (the normal case) -->
+      <div class="ok-only">
+        <div class="confirm-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+        </div>
+        <section class="confirm-block" lang="el">
+          <h1>Το email σας επιβεβαιώθηκε!</h1>
+          <p>Επιστρέψτε στην εφαρμογή <strong>Athlomate</strong> και πατήστε <strong>«Έχω επιβεβαιώσει, σύνδεση»</strong> για να συνδεθείτε.</p>
+          <p>Μπορείτε να κλείσετε αυτή τη σελίδα.</p>
+        </section>
+        <hr class="confirm-sep" />
+        <section class="confirm-block secondary" lang="en">
+          <h2>Your email is confirmed!</h2>
+          <p>Go back to the <strong>Athlomate</strong> app and tap <strong>“I have confirmed, sign in”</strong> to sign in. You can close this page.</p>
+        </section>
+      </div>
+
+      <!-- Expired or already used link -->
+      <div class="failed-only">
+        <div class="confirm-icon warn" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5v6" /><path d="M12 17h.01" /></svg>
+        </div>
+        <section class="confirm-block" lang="el">
+          <h1>Ο σύνδεσμος δεν λειτούργησε</h1>
+          <p>Ίσως έληξε ή χρησιμοποιήθηκε ήδη. Αν έχετε ήδη επιβεβαιώσει, απλώς συνδεθείτε στην εφαρμογή <strong>Athlomate</strong>.</p>
+          <p>Αλλιώς, ανοίξτε την εφαρμογή, δοκιμάστε να συνδεθείτε και πατήστε <strong>«Αποστολή ξανά»</strong> για νέο σύνδεσμο.</p>
+        </section>
+        <hr class="confirm-sep" />
+        <section class="confirm-block secondary" lang="en">
+          <h2>This link didn’t work</h2>
+          <p>It may have expired or been used already. If you have already confirmed, just sign in to the <strong>Athlomate</strong> app. Otherwise open the app, try to sign in and tap <strong>“Resend email”</strong> to get a new link.</p>
+        </section>
+      </div>
+
+      <p class="confirm-help">
+        <span lang="el">Χρειάζεστε βοήθεια;</span> <span lang="en">Need help?</span>
+        <a href="mailto:support@athlomate.app">support@athlomate.app</a>
+      </p>
+    </div>
+  </main>
+
+  <footer><div class="wrap"><div class="foot-bottom"><span>© 2026 Athlomate</span><a href="/">athlomate.app</a></div></div></footer>
+</body>
+</html>
