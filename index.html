@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Safety net (LA9a): a password-reset link that lands on the homepage (older app builds without
+    // redirectTo fall back to the Site URL) is forwarded to the reset page with the same query.
+    // replace() keeps the token out of the history; nothing is read or sent here.
+    (function () {
+      var q = window.location.search || '';
+      if (/[?&]token_hash=/.test(q) && /[?&]type=recovery(&|$)/.test(q)) {
+        window.location.replace('/reset-password.html' + q);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Athlomate – Find people to play your sport, near you</title>
   <meta name="description" content="Athlomate connects you with people who play your sport, in your city, at your skill level. Organize or join a game in Greece. English and Greek." />
