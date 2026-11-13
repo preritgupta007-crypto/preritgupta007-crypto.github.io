@@ -35,8 +35,8 @@
   <meta property="og:image:alt" content="Athlomate: βρες τον επόμενο συμπαίκτη" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="styles.css?v=24" />
-  <link rel="stylesheet" href="anim.css?v=24" />
+  <link rel="preload" href="fonts/Geologica-greek.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="home.css?v=30" />
 
   <script type="application/ld+json">
   {
@@ -82,33 +82,30 @@
   <main id="main">
     <!-- Hero -->
     <div class="hero" id="top">
-      <div class="hero-grid" aria-hidden="true"></div>
+      <svg class="court" viewBox="0 0 1180 620" aria-hidden="true"><rect x="10" y="10" width="1160" height="600" rx="6"/><circle cx="590" cy="310" r="112"/><path d="M10 96h132a232 232 0 0 1 0 428H10M10 214h188v192H10"/><path d="M1170 96h-132a232 232 0 0 0 0 428h132M1170 214H982v192h188"/></svg>
       <div class="wrap hero-inner">
-        <a class="pill" href="#download"><span class="pill-flag"><svg class="flag" viewBox="0 0 27 18" aria-hidden="true"><rect width="27" height="18" fill="#0D5EAF"/><path d="M0 3h27M0 7h27M10 11h17M0 15h27" stroke="#fff" stroke-width="2"/><rect width="10" height="10" fill="#0D5EAF"/><path d="M0 5h10M5 0v10" stroke="#fff" stroke-width="2"/></svg></span><span data-i18n="heroEyebrow">Launching in Greece</span><span class="pill-tag"><span class="dot"></span><span data-i18n="pillTag">Soon</span></span><span class="pill-arrow" aria-hidden="true">→</span></a>
-        <h1><span data-i18n="heroTitle1">Find your next</span> <span class="accent" data-i18n="heroTitleAccent">player.</span><br /><span data-i18n="heroTitle2">Move together.</span></h1>
+        <a class="pill" href="#download"><span class="pill-flag"><svg class="flag" viewBox="0 0 27 18" aria-hidden="true"><rect width="27" height="18" fill="#0D5EAF"/><path d="M0 3h27M0 7h27M10 11h17M0 15h27" stroke="#fff" stroke-width="2"/><rect width="10" height="10" fill="#0D5EAF"/><path d="M0 5h10M5 0v10" stroke="#fff" stroke-width="2"/></svg></span><span data-i18n="heroEyebrow">Launching in Greece</span><span class="pill-tag"><span class="dot"></span><span data-i18n="pillTag">Soon</span></span></a>
+        <h1><span data-i18n="heroTitle1">Find your next</span> <span class="accent"><span data-i18n="heroTitleAccent">player.</span><svg class="scribble" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 13C52 5 96 17 150 10s98-7 147 1"/></svg></span><br /><span data-i18n="heroTitle2">Move together.</span></h1>
         <p class="lead" data-i18n="heroLead">Athlomate connects you with people who play your sport, in your city, at your skill level. Organize a game or join one in minutes.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#download" data-i18n="heroCta">Launching soon</a>
           <a class="btn btn-ghost" href="#how" data-i18n="heroCta2">See how it works</a>
         </div>
         <p class="store-note" data-i18n="heroNote">Publishing soon on the App Store and Google Play.</p>
+      </div>
 
-        <div class="hero-stage">
-          <div class="side-card left" aria-hidden="true">
-            <span class="sc-emoji">🎾</span>
-            <div><strong data-i18n="sideA1">Padel · Saturday 11:00</strong><small data-i18n="sideA2">Intermediate · 1 spot left</small></div>
-          </div>
-          <div class="side-card right" aria-hidden="true">
-            <span class="sc-emoji">🏀</span>
-            <div><strong data-i18n="sideB1">Basketball · tonight 20:30</strong><small data-i18n="sideB2">All levels · 3 spots left</small></div>
-          </div>
-          <div class="floating a" aria-hidden="true"><span class="dot"></span><span data-i18n="float1">3 shared sports</span></div>
-          <div class="floating b" aria-hidden="true"><span class="dot"></span><span class="tick" id="tick">Football · tonight 20:30 · 2 spots left</span></div>
-          <figure class="shot hero-shot">
-            <img src="img/welcome.jpg?v=24" alt="Athlomate welcome screen with a basketball hoop" width="735" height="1598" fetchpriority="high" />
-          </figure>
-        </div>
+      <div class="wall">
+        <figure class="tile t1" aria-hidden="true"><img src="img/play-volley.jpg" alt="" width="540" height="960" /><figcaption data-i18n="sVolleyball">Volleyball</figcaption></figure>
+        <figure class="tile t2" aria-hidden="true"><img src="img/play-football.jpg" alt="" width="540" height="960" /><figcaption data-i18n="sFootball">Football</figcaption></figure>
+        <figure class="device">
+          <img src="img/welcome.jpg?v=24" alt="Athlomate welcome screen with a basketball hoop" width="735" height="1598" fetchpriority="high" />
+          <div class="notif" aria-hidden="true"><img src="img/logo.png" alt="" width="38" height="38" /><div><strong>Athlomate</strong><span class="tick" id="tick">Football · tonight 20:30 · 2 spots left</span></div></div>
+        </figure>
+        <figure class="tile t3" aria-hidden="true"><img src="img/play-running.jpg" alt="" width="540" height="960" /><figcaption data-i18n="sRunning">Running</figcaption></figure>
+        <figure class="tile t4" aria-hidden="true"><img src="img/play-hiking.jpg" alt="" width="540" height="960" /><figcaption data-i18n="sHiking">Hiking</figcaption></figure>
+      </div>
 
+      <div class="wrap">
         <div class="hero-stats">
           <div><strong>11+</strong><span data-i18n="stat1">sports at launch</span></div>
           <div><strong>EN · ΕΛ</strong><span data-i18n="stat2">fully bilingual</span></div>
@@ -117,54 +114,52 @@
       </div>
     </div>
 
-    <!-- Games ticker -->
+    <!-- Games board -->
     <section id="games" class="games">
       <div class="wrap">
-        <div class="sec-head center">
-          <span class="eyebrow" data-i18n="gamesEyebrow">Games near you</span>
+        <div class="sec-head">
+          <p class="eyebrow"><span class="n">01</span><span data-i18n="gamesEyebrow">Games near you</span></p>
           <h2 data-i18n="gamesTitle">The fastest way to your next game.</h2>
           <p data-i18n="gamesSub">Someone is always looking for one more player. Open the app, pick a game, tap join.</p>
         </div>
+        <div class="board" aria-hidden="true"></div>
+        <p class="ticker-note" data-i18n="gamesNote">Example games, for illustration.</p>
       </div>
-      <div class="wrap">
-        <div class="games-grid" aria-hidden="true"></div>
-      </div>
-      <p class="wrap ticker-note" data-i18n="gamesNote">Example games, for illustration.</p>
     </section>
 
     <!-- Features (bento) -->
-    <section id="features">
+    <section id="features" class="sheet">
       <div class="wrap">
         <div class="sec-head">
-          <span class="eyebrow" data-i18n="featEyebrow">Features</span>
+          <p class="eyebrow"><span class="n">02</span><span data-i18n="featEyebrow">Features</span></p>
           <h2 data-i18n="featTitle">Everything you need to get a game going</h2>
           <p data-i18n="featSub">Built around sports and skill level, not swiping.</p>
         </div>
         <div class="bento">
           <article class="card wide">
-            <div class="card-text"><div class="icon">🔎</div><h3 data-i18n="f2t">Discover players</h3><p data-i18n="f2d">Browse players in your city who share your sports. Filter by sport and see what you have in common.</p></div>
+            <div class="card-text"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></div><h3 data-i18n="f2t">Discover players</h3><p data-i18n="f2d">Browse players in your city who share your sports. Filter by sport and see what you have in common.</p></div>
             <div class="card-shot"><img src="img/discover.jpg?v=24" alt="" width="735" height="1598" loading="lazy" /></div>
           </article>
-          <article class="card"><div class="icon">🤝</div><h3 data-i18n="f3t">Smart match</h3><p data-i18n="f3d">Suggestions are weighted by skill level, so the people you see are a real fit for your game.</p>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 20v-6M12 20V9M18 20V4"/></svg></div><h3 data-i18n="f3t">Smart match</h3><p data-i18n="f3d">Suggestions are weighted by skill level, so the people you see are a real fit for your game.</p>
             <div class="skill-meter" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
           </article>
-          <article class="card"><div class="icon">🗺️</div><h3 data-i18n="f6t">Venue map</h3><p data-i18n="f6d">See courts and venues for your sport on an interactive map.</p>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.6-6-10.2a6 6 0 1 1 12 0C18 15.4 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.2"/></svg></div><h3 data-i18n="f6t">Venue map</h3><p data-i18n="f6d">See courts and venues for your sport on an interactive map.</p>
             <div class="mini-map" aria-hidden="true"><span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span></div>
           </article>
-          <article class="card wide">
-            <div class="card-text"><div class="icon">📅</div><h3 data-i18n="f4t">Create and join events</h3><p data-i18n="f4d">Set a sport, time and place with open spots. Others request to join and you accept.</p></div>
+          <article class="card wide navy">
+            <div class="card-text"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></div><h3 data-i18n="f4t">Create and join events</h3><p data-i18n="f4d">Set a sport, time and place with open spots. Others request to join and you accept.</p></div>
             <div class="card-shot"><img src="img/events.jpg?v=24" alt="" width="735" height="1598" loading="lazy" /></div>
           </article>
           <article class="card wide">
-            <div class="card-text"><div class="icon">💬</div><h3 data-i18n="f5t">Direct messaging</h3><p data-i18n="f5d">Chat with players to agree the details before you meet.</p>
+            <div class="card-text"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4 3.5V17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></div><h3 data-i18n="f5t">Direct messaging</h3><p data-i18n="f5d">Chat with players to agree the details before you meet.</p>
             <div class="bubbles" aria-hidden="true"><span class="b-in" data-i18n="bub1">Court 2 at 20:30?</span><span class="b-out" data-i18n="bub2">Perfect, see you there 🙌</span></div></div>
             <div class="card-shot"><img src="img/messages.jpg" alt="" width="735" height="1598" loading="lazy" /></div>
           </article>
-          <article class="card"><div class="icon">🔥</div><h3 data-i18n="c3t">Activity streaks</h3><p data-i18n="c3">Keep your rhythm week after week.</p>
-            <div class="streak-days" aria-hidden="true"><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span></span><span></span></div>
+          <article class="card sun"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21c-3.6 0-6-2.300-6-5.5 0-2.2 1.2-3.800 2.4-5.300C9.5 8.800 10.4 7.4 10.300 5c2.800 1.300 4.5 3.700 4.900 6.300.6-.4 1-1.100 1.2-1.900C17.5 10.900 18 12.700 18 14.800 18 18.5 15.6 21 12 21z"/></svg></div><h3 data-i18n="c3t">Activity streaks</h3><p data-i18n="c3">Keep your rhythm week after week.</p>
+            <div class="streak-days" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
           </article>
           <article class="card wide full">
-            <div class="card-text"><div class="icon">🎯</div><h3 data-i18n="f1t">Sport and skill profile</h3><p data-i18n="f1d">Pick the sports you play and set your skill level, so you meet people who match your pace.</p></div>
+            <div class="card-text"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3.100-5.800 7-5.800s7 2.300 7 5.800"/></svg></div><h3 data-i18n="f1t">Sport and skill profile</h3><p data-i18n="f1d">Pick the sports you play and set your skill level, so you meet people who match your pace.</p></div>
             <div class="card-shot two"><img src="img/profile.jpg?v=24" alt="" width="735" height="1598" loading="lazy" /><img src="img/profile-sports.jpg" alt="" width="735" height="1598" loading="lazy" /></div>
           </article>
         </div>
@@ -175,7 +170,7 @@
     <section id="how" class="how">
       <div class="wrap">
         <div class="sec-head">
-          <span class="eyebrow" data-i18n="howEyebrow">How it works</span>
+          <p class="eyebrow"><span class="n">03</span><span data-i18n="howEyebrow">How it works</span></p>
           <h2 data-i18n="howTitle">From sign-up to kick-off</h2>
           <p data-i18n="howSub">Four simple steps.</p>
         </div>
@@ -211,7 +206,7 @@
       <div class="wrap split">
         <div>
           <div class="sec-head" style="margin-bottom:0">
-            <span class="eyebrow" data-i18n="comEyebrow">Community</span>
+            <p class="eyebrow"><span class="n">04</span><span data-i18n="comEyebrow">Community</span></p>
             <h2 data-i18n="comTitle">A friendly, safe community</h2>
             <p data-i18n="comSub">Athlomate keeps the focus on playing together.</p>
           </div>
@@ -235,7 +230,7 @@
     <!-- FAQ -->
     <section id="faq" class="faq">
       <div class="wrap faq-wrap">
-        <div class="sec-head"><span class="eyebrow" data-i18n="faqEyebrow">FAQ</span><h2 data-i18n="faqTitle">Frequently asked questions</h2></div>
+        <div class="sec-head"><p class="eyebrow"><span class="n">05</span><span data-i18n="faqEyebrow">FAQ</span></p><h2 data-i18n="faqTitle">Frequently asked questions</h2></div>
         <div class="faq-list">
           <h3 class="faq-topic" data-i18n="faqTopicStart">Getting started</h3>
           <details><summary><span data-i18n="faq1Q">What is Athlomate?</span></summary><p data-i18n="faq1A">Athlomate helps you find people to play your sport with: Athlomates near you, at a similar level. Join a game or create your own, then meet up and play.</p></details>
@@ -266,7 +261,7 @@
     <section id="download" style="padding-top:20px">
       <div class="wrap">
         <div class="cta">
-          <div class="cta-glow" aria-hidden="true"></div>
+          <svg class="court" viewBox="0 0 1180 620" aria-hidden="true"><rect x="10" y="10" width="1160" height="600" rx="6"/><circle cx="590" cy="310" r="112"/><path d="M10 96h132a232 232 0 0 1 0 428H10M10 214h188v192H10"/><path d="M1170 96h-132a232 232 0 0 0 0 428h132M1170 214H982v192h188"/></svg>
           <img src="img/logo.png" alt="" width="64" height="64" class="cta-logo" />
           <h2 data-i18n="ctaTitle">Launching soon</h2>
           <p data-i18n="ctaText">We're getting Athlomate ready for iOS and Android. Publishing very soon.</p>
@@ -304,7 +299,7 @@
     </div>
   </footer>
 
-  <script src="anim.js?v=24"></script>
-  <script src="script.js?v=25"></script>
+  <script src="home.js?v=30"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>

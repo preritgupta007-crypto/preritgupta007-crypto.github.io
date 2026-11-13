@@ -111,11 +111,13 @@
   }
   function renderTicker(lang) {
     var gr = lang === "el";
-    var grid = document.querySelector(".games-grid");
-    if (!grid) return;
-    grid.innerHTML = games.map(function (g) {
-      return '<div class="game"><span class="g-emoji">' + g[0] + '</span><div><strong>' + (gr ? g[2] : g[1]) +
-        '</strong><small>' + (gr ? g[4] : g[3]) + '<br>' + (gr ? g[6] : g[5]) + '</small></div><span class="g-spots">' + spotsText(g[7], lang) + '</span></div>';
+    var board = document.querySelector(".board");
+    if (!board) return;
+    board.innerHTML = games.map(function (g) {
+      var when = gr ? g[4] : g[3], cut = when.lastIndexOf(" ");
+      return '<div class="fx"><div class="fx-when"><small>' + when.slice(0, cut) + '</small><b>' + when.slice(cut + 1) +
+        '</b></div><div class="fx-what"><strong><span class="fx-emoji">' + g[0] + '</span>' + (gr ? g[2] : g[1]) +
+        '</strong><small>' + (gr ? g[6] : g[5]) + '</small></div><span class="fx-spots' + (g[7] === 1 ? ' last' : '') + '">' + spotsText(g[7], lang) + '</span></div>';
     }).join("");
   }
 
@@ -161,20 +163,33 @@
       s.setAttribute("aria-selected", String(k === current));
     });
     frames.forEach(function (f, k) { f.classList.toggle("active", k === current); });
-    if (user) { clearInterval(timer); timer = null; document.querySelector(".showcase").classList.add("paused"); }
+    if (user) { clearInterval(timer); timer = null; showcase.classList.add("paused"); }
   }
-  steps.forEach(function (s, k) { s.addEventListener("click", function () { go(k, true); }); });
-  if (steps.length && !reduce && "IntersectionObserver" in window) {
-    var showcase = document.querySelector(".showcase");
-    new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.isIntersecting && !timer && !showcase.classList.contains("paused")) {
-          showcase.classList.add("running");
-          timer = setInterval(function () { go(current + 1); }, DURATION);
-        } else if (!e.isIntersecting && timer) {
-          clearInterval(timer); timer = null; showcase.classList.remove("running");
-        }
-      });
-    }, { threshold: 0.3 }).observe(showcase);
+  var showcase = document.querySelector(".showcase");
+  var scrolly = window.matchMedia("(min-width: 1001px)").matches && "IntersectionObserver" in window;
+  if (steps.length && scrolly) {
+    // Desktop: the phone stays in place and each step becomes active as it crosses the middle of the screen.
+    var mid = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) go(steps.indexOf(e.target)); });
+    }, { rootMargin: "-50% 0px -50% 0px", threshold: 0 });
+    steps.forEach(function (s) {
+      mid.observe(s);
+      s.addEventListener("click", function () { s.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" }); });
+    });
+  } else if (steps.length) {
+    // Phone: tabs that advance on their own while visible.
+    steps.forEach(function (s, k) { s.addEventListener("click", function () { go(k, true); }); });
+    if (!reduce && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !timer && !showcase.classList.contains("paused")) {
+            showcase.classList.add("running");
+            timer = setInterval(function () { go(current + 1); }, DURATION);
+          } else if (!e.isIntersecting && timer) {
+            clearInterval(timer); timer = null; showcase.classList.remove("running");
+          }
+        });
+      }, { threshold: 0.3 }).observe(showcase);
+    }
   }
 })();
