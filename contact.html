@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Επικοινωνία · Athlomate</title>
+  <meta name="description" content="Στείλε μας μήνυμα. Write to the Athlomate team." />
+  <link rel="canonical" href="https://athlomate.app/contact" />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="icon" type="image/png" href="/img/logo.png" />
+  <link rel="apple-touch-icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="/styles.css?v=24" />
+  <style>
+    /* One language at a time. Without JavaScript the page stays in Greek; contact.js switches it. */
+    html[lang="el"] span[lang="en"], html[lang="el"] p[lang="en"] { display: none; }
+    html[lang="en"] span[lang="el"], html[lang="en"] p[lang="el"] { display: none; }
+    .contact-page { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+    .contact-main { flex: 1; display: flex; justify-content: center; padding: 32px 16px calc(40px + env(safe-area-inset-bottom)); }
+    .contact-card {
+      width: 100%; max-width: 560px; align-self: flex-start; background: var(--ink-2); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 32px clamp(20px, 6vw, 40px); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+    .contact-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+    .contact-card h1 {
+      background: none; color: #fff; -webkit-background-clip: border-box; background-clip: border-box;
+      font-size: clamp(26px, 7vw, 34px); line-height: 1.15; letter-spacing: -0.02em; margin: 0; padding: 0;
+    }
+    .lang-switch { display: inline-flex; border: 1px solid var(--line-2); border-radius: 999px; padding: 3px; flex: none; }
+    .lang-switch button {
+      font: inherit; font-size: 13px; font-weight: 600; color: var(--muted); background: none; border: 0;
+      border-radius: 999px; padding: 6px 12px; min-height: 32px; cursor: pointer;
+    }
+    .lang-switch button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+    .contact-lead { color: var(--text-2); margin: 8px 0 24px; font-size: 16px; }
+    .contact-lead a { color: #7aa5ff; text-decoration: underline; text-underline-offset: 3px; }
+    .field { display: block; margin-bottom: 16px; }
+    .field > span.lbl { display: block; font-size: 14px; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+    .field input, .field textarea {
+      width: 100%; font: inherit; font-size: 16px; color: #fff; background: var(--ink); border: 1px solid var(--line-2);
+      border-radius: 14px; padding: 12px 14px; min-height: 48px;
+    }
+    .field textarea { min-height: 160px; resize: vertical; }
+    .field input:focus, .field textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+    .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .contact-card .btn { width: 100%; min-height: 50px; border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+    .contact-card .btn[disabled] { opacity: 0.6; cursor: default; transform: none; }
+    .contact-note { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+    .contact-note a { color: #7aa5ff; text-decoration: underline; text-underline-offset: 3px; }
+    .status { margin: 16px 0 0; padding: 12px 14px; border-radius: 14px; font-size: 15px; }
+    .status[hidden] { display: none; }
+    .status.ok { background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.45); color: #6ee7b7; }
+    .status.bad { background: rgba(229, 168, 35, 0.12); border: 1px solid rgba(229, 168, 35, 0.5); color: #fcd34d; }
+    .status.info { background: var(--ink-3); border: 1px solid var(--line); color: var(--text-2); }
+    .status a { color: inherit; text-decoration: underline; }
+    .contact-page footer { padding: 0 0 calc(24px + env(safe-area-inset-bottom)); }
+    .contact-page .foot-bottom { font-size: 14px; color: var(--muted); justify-content: center; }
+  </style>
+</head>
+<body class="contact-page">
+  <header class="nav">
+    <div class="wrap">
+      <a href="/" class="brand" aria-label="Athlomate"><img src="/img/logo.png" alt="" width="34" height="34" /><img class="wordmark" src="/img/wordmark.svg" alt="athlomate" width="178" height="22" /></a>
+    </div>
+  </header>
+
+  <main class="contact-main">
+    <div class="contact-card">
+      <div class="contact-top">
+        <h1><span lang="el">Επικοινωνία</span><span lang="en">Contact us</span></h1>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-setlang="el" aria-pressed="true">EL</button>
+          <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+      <p class="contact-lead">
+        <span lang="el">Στείλε μας μήνυμα και θα σου απαντήσουμε στο email που θα δώσεις. Μπορείς επίσης να γράψεις στο <a href="mailto:support@athlomate.app">support@athlomate.app</a>.</span>
+        <span lang="en">Send us a message and we will answer to the email you give. You can also write to <a href="mailto:support@athlomate.app">support@athlomate.app</a>.</span>
+      </p>
+
+      <form id="contact-form" novalidate>
+        <label class="field">
+          <span class="lbl"><span lang="el">Όνομα</span><span lang="en">Name</span></span>
+          <input type="text" name="name" autocomplete="name" required maxlength="100" />
+        </label>
+        <label class="field">
+          <span class="lbl">Email</span>
+          <input type="email" name="email" autocomplete="email" inputmode="email" required maxlength="200" />
+        </label>
+        <label class="field">
+          <span class="lbl"><span lang="el">Μήνυμα</span><span lang="en">Message</span></span>
+          <textarea name="message" required minlength="10" maxlength="3000"></textarea>
+        </label>
+        <div class="trap" aria-hidden="true">
+          <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <button class="btn btn-primary" type="submit" id="send-btn"><span lang="el">Αποστολή</span><span lang="en">Send message</span></button>
+        <p class="contact-note">
+          <span lang="el">Χρησιμοποιούμε το όνομα και το email σου μόνο για να απαντήσουμε. Δες την <a href="https://legal.athlomate.app/el/privacy">Πολιτική απορρήτου</a>.</span>
+          <span lang="en">We use your name and email only to reply. See the <a href="https://legal.athlomate.app/en/privacy">Privacy Policy</a>.</span>
+        </p>
+      </form>
+
+      <div aria-live="polite">
+        <p class="status ok" id="st-ok" hidden>
+          <span lang="el">Ευχαριστούμε! Το μήνυμά σου στάλθηκε. Θα σου απαντήσουμε σύντομα.</span>
+          <span lang="en">Thank you! Your message was sent. We will reply soon.</span>
+        </p>
+        <p class="status bad" id="st-err" hidden>
+          <span lang="el">Δεν μπορέσαμε να στείλουμε το μήνυμα. Δοκίμασε ξανά ή γράψε στο <a href="mailto:support@athlomate.app">support@athlomate.app</a>.</span>
+          <span lang="en">We could not send your message. Try again or write to <a href="mailto:support@athlomate.app">support@athlomate.app</a>.</span>
+        </p>
+        <p class="status bad" id="st-invalid" hidden>
+          <span lang="el">Έλεγξε το όνομα, το email και το μήνυμα (τουλάχιστον 10 χαρακτήρες).</span>
+          <span lang="en">Please check your name, email and message (at least 10 characters).</span>
+        </p>
+        <p class="status info" id="st-busy" hidden>
+          <span lang="el">Αποστολή…</span><span lang="en">Sending…</span>
+        </p>
+      </div>
+      <noscript>
+        <p class="status bad">
+          <span lang="el">Η φόρμα χρειάζεται JavaScript. Γράψε μας στο <a href="mailto:support@athlomate.app">support@athlomate.app</a>.</span>
+          <span lang="en">This form needs JavaScript. Write to <a href="mailto:support@athlomate.app">support@athlomate.app</a>.</span>
+        </p>
+      </noscript>
+    </div>
+  </main>
+
+  <footer><div class="wrap"><div class="foot-bottom"><span>© 2026 Athlomate</span><a href="/">athlomate.app</a></div></div></footer>
+  <script src="/contact.js?v=1"></script>
+</body>
+</html>
