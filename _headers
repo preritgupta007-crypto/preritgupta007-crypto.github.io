@@ -23,3 +23,7 @@
   X-Robots-Tag: noindex
   Referrer-Policy: no-referrer
   Cache-Control: public, max-age=300
+
+/game-link
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
