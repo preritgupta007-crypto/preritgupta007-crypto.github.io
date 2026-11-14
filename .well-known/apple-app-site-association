@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["355D5482C6.com.prerit.athlomate"],
+        "components": [
+          { "/": "/e/*", "comment": "Game links: https://athlomate.app/e/<event id>" }
+        ]
+      }
+    ]
+  }
+}

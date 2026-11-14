@@ -12,3 +12,18 @@
   Referrer-Policy: no-referrer
   Cache-Control: no-store
   Content-Security-Policy: default-src 'self'; script-src 'self'; connect-src https://*.supabase.co; style-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'
+
+# Game links (LA21 / LA9b). Apple fetches the association file itself: it must answer 200 as JSON, no redirect.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+# Fallback page for https://athlomate.app/e/<event id> (shown when the app did not open).
+/e/*
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+  Cache-Control: public, max-age=300
+
+/game-link
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
