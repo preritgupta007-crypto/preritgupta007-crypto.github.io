@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects. Never add a line that matches /.well-known/* (Apple needs a direct 200 there).
+# Game links (LA21 / LA9b): every /e/<event id> shows the same fallback page, address unchanged (rewrite, status 200).
+/e/*  /e/index.html  200

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Athlomate</title>
+  <!-- Fallback page for game links https://athlomate.app/e/<event id> (LA21 / LA9b), served for every /e/* path by _redirects.
+       Static on purpose: no JavaScript, and it never reads the game id, so nothing about the game can leak.
+       The Smart App Banner has no app-argument for the same reason. All paths are absolute because the page is served under /e/<id>. -->
+  <meta name="robots" content="noindex" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="apple-itunes-app" content="app-id=6833660850" />
+  <meta name="theme-color" content="#0B1220" />
+  <link rel="icon" type="image/png" href="/img/logo.png" />
+  <link rel="apple-touch-icon" href="/img/logo.png" />
+  <link rel="stylesheet" href="/styles.css?v=24" />
+  <style>
+    .confirm-page { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+    .confirm-main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 32px 16px calc(40px + env(safe-area-inset-bottom)); }
+    .confirm-card {
+      width: 100%; max-width: 480px; text-align: center; background: var(--ink-2); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 36px clamp(20px, 6vw, 40px); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+    .confirm-logo { width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 18px; box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35); }
+    .confirm-block { padding: 0; }
+    .confirm-block h1 {
+      background: none; color: #fff; -webkit-background-clip: border-box; background-clip: border-box;
+      font-size: clamp(24px, 6.5vw, 30px); line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 10px; padding: 0;
+    }
+    .confirm-block p { margin: 0; color: var(--text-2); font-size: 16px; }
+    .confirm-block p + p { margin-top: 8px; }
+    .confirm-block .btn { margin-top: 20px; min-height: 48px; }
+    .confirm-sep { height: 1px; background: var(--line); margin: 28px 0; border: 0; }
+    .confirm-block.secondary h2 { font-size: 19px; line-height: 1.3; margin: 0 0 8px; color: #fff; }
+    .confirm-block.secondary p { font-size: 15px; color: var(--muted); }
+    .confirm-block.secondary .btn { margin-top: 16px; }
+    .confirm-note { margin-top: 14px !important; font-size: 13px !important; color: var(--muted) !important; }
+    .confirm-help { margin: 26px 0 0; font-size: 14px; color: var(--muted); }
+    .confirm-help a { color: #7aa5ff; text-decoration: underline; text-underline-offset: 3px; }
+    .confirm-page footer { padding: 0 0 calc(24px + env(safe-area-inset-bottom)); }
+    .confirm-page .foot-bottom { font-size: 14px; color: var(--muted); justify-content: center; }
+  </style>
+</head>
+<body class="confirm-page">
+  <header class="nav">
+    <div class="wrap">
+      <a href="/" class="brand" aria-label="Athlomate"><img src="/img/logo.png" alt="" width="34" height="34" /><img class="wordmark" src="/img/wordmark.svg" alt="athlomate" width="178" height="22" /></a>
+    </div>
+  </header>
+
+  <main class="confirm-main">
+    <div class="confirm-card">
+      <img class="confirm-logo" src="/img/logo.png" alt="" width="72" height="72" />
+      <section class="confirm-block" lang="el">
+        <h1>Σε προσκάλεσαν σε παιχνίδι</h1>
+        <p>Κάποιος σε προσκάλεσε σε ένα παιχνίδι στο Athlomate. Το Athlomate σε βοηθά να βρεις παρέα για το άθλημά σου, κοντά σου.</p>
+        <p>Αν έχεις ήδη την εφαρμογή, άνοιξέ την και πάτησε ξανά τον σύνδεσμο από το μήνυμα που έλαβες.</p>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6833660850">Λήψη από το App Store</a>
+      </section>
+      <hr class="confirm-sep" />
+      <section class="confirm-block secondary" lang="en">
+        <h2>You've been invited to play</h2>
+        <p>Someone invited you to a game on Athlomate. Athlomate helps you find people to play your sport, near you. If you already have the app, open it and tap the link again from the message you received.</p>
+        <a class="btn btn-ghost" href="https://apps.apple.com/app/id6833660850">Download on the App Store</a>
+      </section>
+      <p class="confirm-help">
+        <a href="https://legal.athlomate.app/el/privacy" lang="el">Πολιτική απορρήτου</a> · <a href="https://legal.athlomate.app/en/privacy" lang="en">Privacy Policy</a>
+      </p>
+    </div>
+  </main>
+
+  <footer><div class="wrap"><div class="foot-bottom"><span>© 2026 Athlomate</span><a href="/">athlomate.app</a></div></div></footer>
+</body>
+</html>
